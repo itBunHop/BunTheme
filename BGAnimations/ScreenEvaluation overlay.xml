@@ -10,7 +10,7 @@
 	
 	<Layer
 		Type="BitmapText"
-		Font="nunito Bold"
+		Font="_nunito Bold small"
 		Text="song"
 		InitCommand="hidden,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-113;shadowlength,0;zoom,0.75;maxwidth,800;queuecommand,Set"
 		SetCommand="%function(self)

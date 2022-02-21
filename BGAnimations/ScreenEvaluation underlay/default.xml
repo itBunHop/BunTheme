@@ -30,7 +30,7 @@
 		<!-- p1 mods -->
 		<Layer
 			Type="BitmapText"
-			Font="nunito"
+			Font="_nunito small"
 			InitCommand="shadowlength,0;x,8;y,270;zoom,0.45;horizalign,left;wrapwidthpixels,650"
 			OnCommand="queuecommand,Set"
 			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP1'):GetText()) end"
@@ -50,7 +50,7 @@
 		
 		<Layer
 			Type="BitmapText"
-			Font="nunito"
+			Font="_nunito small"
 			InitCommand="shadowlength,0;x,4;y,2;zoom,0.5;horizalign,left;maxwidth,600;queuecommand,Set"
 			SetCommand="%function(self)
 				local steps = GAMESTATE:GetCurrentSteps(0)
@@ -88,7 +88,7 @@
 		<!-- p2 mods -->
 		<Layer
 			Type="BitmapText"
-			Font="nunito"
+			Font="_nunito small"
 			InitCommand="shadowlength,0;x,8;y,270;zoom,0.45;horizalign,left;wrapwidthpixels,650"
 			OnCommand="queuecommand,Set"
 			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP2'):GetText()) end"
@@ -108,7 +108,7 @@
 		
 		<Layer
 			Type="BitmapText"
-			Font="nunito"
+			Font="_nunito small"
 			InitCommand="shadowlength,0;x,4;y,2;zoom,0.5;horizalign,left;maxwidth,600;queuecommand,Set"
 			SetCommand="%function(self)
 				local steps = GAMESTATE:GetCurrentSteps(1)

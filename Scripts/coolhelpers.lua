@@ -8,4 +8,4 @@ end
 
 -- i stole it from simply love :cries:
 function JudgmentTween(self) self:zoom(0.8) self:decelerate(.1) self:zoom(0.75) self:sleep(.6) self:accelerate(.2) self:zoom(0) end
-function HoldTween(self) self:diffuse(1,1,1,1) self:zoom(.5); self:sleep(.4) self:decelerate(.15) self:diffusealpha(0) end
+function HoldTween(self) self:diffuse(1,1,1,1) self:zoom(.5); self:sleep(.5) self:diffusealpha(0) end

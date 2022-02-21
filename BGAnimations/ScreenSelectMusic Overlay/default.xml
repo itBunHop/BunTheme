@@ -60,7 +60,6 @@
 			Type="BitmapText"
 			Font="_nunito Bold"
 			Text="Artist:"
-			Condition="not GAMESTATE:IsCourseMode()"
 			InitCommand="shadowlength,0;zoom,0.45;diffuse,#BBBBBB;horizalign,right"
 		/>
 		
@@ -68,7 +67,6 @@
 			Type="BitmapText"
 			Font="_nunito Bold"
 			Text="BPM:"
-			Condition="not GAMESTATE:IsCourseMode()"
 			InitCommand="y,18;shadowlength,0;zoom,0.45;diffuse,#BBBBBB;horizalign,right"
 		/>
 		
@@ -76,74 +74,57 @@
 			Type="BitmapText"
 			Font="_nunito Bold"
 			Text="Length:"
-			Condition="not GAMESTATE:IsCourseMode()"
-			InitCommand="x,150;y,18;shadowlength,0;zoom,0.45;diffuse,#BBBBBB;horizalign,right"
+			InitCommand="x,160;y,18;shadowlength,0;zoom,0.45;diffuse,#BBBBBB;horizalign,right"
 		/>
 		
 		<!-- infos -->
 		<Layer
-			Type="BitmapText"
-			Font="_nunito Bold"
-			Text="artist name"
-			InitCommand="x,4;y,0;shadowlength,0;zoom,0.45;diffuse,#FFFFFF;horizalign,left;maxwidth,550"
-			SetCommand="%function(self)
-			local gcs = GAMESTATE:GetCurrentSong()
-			local native = PREFSMAN:GetPreference('ShowNativeLanguage')
-			if gcs then
-				if native then
-					self:settext(gcs:GetDisplayArtist())
-				else
-					self:settext(gcs:GetTranslitArtist())
-				end
-			else
-				self:settext('')
-			end
-			
+			Type="Quad"
+			InitCommand="hidden,1"
+			OnCommand="queuecommand,Move"
+			MoveCommand="%function(self)
+				local a = SCREENMAN:GetTopScreen():GetChild('ArtistDisplay')
+				
+				a:x(SCREEN_CENTER_X-270+4)
+				a:y(SCREEN_CENTER_Y-70)
+				a:zoom(0.45)
+				a:horizalign('left')
+				a:maxwidth(550)
+				a:shadowlength(0)
+				a:hidden(0)
 			end"
-			CurrentSongChangedMessageCommand="playcommand,Set"
 		/>
 		
 		<Layer
-			Type="BitmapText"
-			Font="_inconsolata small"
-			Text="bpms"
-			InitCommand="x,4;y,18;shadowlength,0;zoom,0.65;diffuse,#FFFFFF;horizalign,left"
-			SetCommand="%function(self)
-			local gcs = GAMESTATE:GetCurrentSong()
-			if gcs then
-				local minbpm = math.floor(gcs:GetMinBPM())
-				local maxbpm = math.floor(gcs:GetMaxBPM())
-				if maxbpm - minbpm == 0 then
-					self:settext(minbpm)
-					self:diffuse(1,1,1,1)
-				else
-					self:settext(minbpm..'-'..maxbpm)
-					self:diffuse(1,0.4,0.4,1)
-				end
-			else
-				self:settext('')
-				self:diffuse(1,1,1,1)
-			end
-			
+			Type="Quad"
+			InitCommand="hidden,1"
+			OnCommand="queuecommand,Move"
+			MoveCommand="%function(self)
+				local a = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
+				
+				a:x(SCREEN_CENTER_X-270+4)
+				a:y(SCREEN_CENTER_Y-70+18)
+				a:zoom(0.65)
+				a:horizalign('left')
+				a:shadowlength(0)
+				a:hidden(0)
 			end"
-			CurrentSongChangedMessageCommand="playcommand,Set"
 		/>
 		
 		<Layer
-			Type="BitmapText"
-			Font="_inconsolata small"
-			Text="length"
-			InitCommand="x,154;y,18;shadowlength,0;zoom,0.65;diffuse,#FFFFFF;horizalign,left"
-			SetCommand="%function(self)
-			local gcs = GAMESTATE:GetCurrentSong()
-			if gcs then
-				self:settext(SecondsToMMSSMsMs(gcs:MusicLengthSeconds()))
-			else
-				self:settext('')
-			end
-			
+			Type="Quad"
+			InitCommand="hidden,1"
+			OnCommand="queuecommand,Move"
+			MoveCommand="%function(self)
+				local a = SCREENMAN:GetTopScreen():GetChild('TotalTime')
+				
+				a:x(SCREEN_CENTER_X-270+164)
+				a:y(SCREEN_CENTER_Y-70+18)
+				a:zoom(0.65)
+				a:horizalign('left')
+				a:shadowlength(0)
+				a:hidden(0)
 			end"
-			CurrentSongChangedMessageCommand="playcommand,Set"
 		/>
 	</children></Layer>
 	
@@ -233,11 +214,6 @@
 	<Layer
 		Type="Quad"
 		InitCommand="stretchto,SCREEN_CENTER_X-324,0,SCREEN_CENTER_X-320,SCREEN_HEIGHT;diffuse,#FFFFFF"
-	/>
-	
-	<Layer
-		Type="Quad"
-		InitCommand="stretchto,SCREEN_CENTER_X-336,0,SCREEN_CENTER_X-324,SCREEN_HEIGHT;diffuse,#404040;fadeleft,0.5"
 	/>
 	
 	<Layer
