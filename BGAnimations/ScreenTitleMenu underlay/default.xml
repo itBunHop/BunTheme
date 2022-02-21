@@ -1,0 +1,43 @@
+﻿<ActorFrame><children>
+	<Layer
+		Type="AutoActor"
+		File="@THEME:GetPath(EC_GRAPHICS,'','logo (doubleres)')"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	/>
+	<Layer
+		Type="BitmapText"
+		Font="_nunito Bold small"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-104;zoom,0.5;shadowlength,0"
+		OnCommand="queuecommand,Set"
+		SetCommand="%function(self)
+			local tpsn = SCREENMAN:GetTopScreen()
+			local life = tpsn:GetChild('LifeDifficulty'):GetText()
+			local lifenumber = math.floor(string.gsub(life,'life difficulty ',''))
+			
+			self:settext(life)
+			if lifenumber ~= 4 then 
+				self:diffuseshift() 
+				self:effectcolor1(1,0.2,0.2,1)
+			end
+		
+		end"
+	/>
+	
+	<Layer
+		Type="BitmapText"
+		Font="_nunito Bold small"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-80;zoom,0.5;shadowlength,0"
+		OnCommand="queuecommand,Set"
+		SetCommand="%function(self)
+			local tpsn = SCREENMAN:GetTopScreen()
+			local track = tpsn:GetChild('Songs'):GetText()
+			local vers = tpsn:GetChild('Version'):GetText()
+			
+			self:settext(track..'\n'..vers)
+		
+		end"
+	/>
+
+</children></ActorFrame>

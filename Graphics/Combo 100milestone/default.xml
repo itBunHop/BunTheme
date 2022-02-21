@@ -1,0 +1,16 @@
+<ActorFrame><children>
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,-60,-2,60,2;y,-2;faderight,0.3;fadeleft,0.3;diffusealpha,1;cropright,1"
+		MilestoneCommand="%function(self)
+		
+		self:cropleft(0)
+		self:cropright(1)
+		self:accelerate(0.15)
+		self:cropright(0)
+		self:decelerate(0.15)
+		self:cropleft(1)
+		
+		end"
+	/>
+</children></ActorFrame>

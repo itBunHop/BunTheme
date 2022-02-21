@@ -1,0 +1,36 @@
+<ActorFrame> <children>
+	<!-- quads underlay -->
+	<!-- backdrop here -->
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,SCREEN_CENTER_X-320,0,SCREEN_CENTER_X+320,SCREEN_HEIGHT;diffuse,#000000;diffusealpha,0.5"
+	/>
+	
+	<!-- vertical (there is more in the overlay for wider screen) -->
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,SCREEN_CENTER_X-14,0,SCREEN_CENTER_X-10,SCREEN_HEIGHT;diffuse,#FFFFFF"
+	/>
+	
+	<!-- horizontal -->
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-2,SCREEN_CENTER_X-10,SCREEN_CENTER_Y+2;y,SCREEN_CENTER_Y-199.5;diffuse,#FFFFFF"
+	/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-2,SCREEN_CENTER_X-10,SCREEN_CENTER_Y+2;y,SCREEN_CENTER_Y-81;diffuse,#FFFFFF"
+	/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-2,SCREEN_CENTER_X-10,SCREEN_CENTER_Y+2;y,SCREEN_CENTER_Y-41;diffuse,#FFFFFF"
+	/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,SCREEN_CENTER_X-320,SCREEN_CENTER_Y-2,SCREEN_CENTER_X-10,SCREEN_CENTER_Y+2;y,SCREEN_CENTER_Y+56;diffuse,#FFFFFF"
+	/>
+</children> </ActorFrame>
+

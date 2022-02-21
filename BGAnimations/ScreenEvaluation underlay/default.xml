@@ -1,0 +1,119 @@
+<ActorFrame><children>
+	
+	<Layer Type="ActorFrame" Name="panelP1" Condition="GAMESTATE:IsPlayerEnabled(0) "InitCommand="x,SCREEN_CENTER_X-310+DoublesOffset();y,SCREEN_CENTER_Y-66"><children>
+		<Layer 
+			File="pane.xml"
+		/>
+		
+		<!-- real stats -->
+		<Layer Type="ActorFrame" InitCommand="x,110;y,20"><children>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*0" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(8)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*1" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(7)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*2" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(6)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*3" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(5)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*4" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(4)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*5" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(3)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*6" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(1)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*7" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetHoldNoteScores(2)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*8" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetHoldNoteScores(1)) end" />
+		</children></Layer>
+		
+		<!-- p1 score -->
+		<Layer
+			Type="BitmapText"
+			Font="_inconsolatasNumbers"
+			InitCommand="shadowlength,0;x,290;y,40;zoom,0.6;horizalign,right"
+			OnCommand="queuecommand,Set"
+			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PercentP1'):GetChild('PercentP1'):GetText()) end"
+		/>
+		
+		<!-- p1 mods -->
+		<Layer
+			Type="BitmapText"
+			Font="nunito"
+			InitCommand="shadowlength,0;x,8;y,270;zoom,0.45;horizalign,left;wrapwidthpixels,650"
+			OnCommand="queuecommand,Set"
+			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP1'):GetText()) end"
+		/>
+		
+		<!-- p1 difficulty and description lol -->
+		<Layer
+			Type="BitmapText"
+			Font="_nunito Bold small"
+			InitCommand="shadowlength,0;x,4;y,-14;zoom,0.6;horizalign,left;maxwidth,500;queuecommand,Set"
+			SetCommand="%function(self)
+				local a = GAMESTATE:GetCurrentSteps(0)
+				local b = a:GetRadarValues()
+				self:settext(DifficultyToThemedString(a:GetDifficulty())..' '..a:GetMeter())
+			end"
+		/>
+		
+		<Layer
+			Type="BitmapText"
+			Font="nunito"
+			InitCommand="shadowlength,0;x,4;y,2;zoom,0.5;horizalign,left;maxwidth,600;queuecommand,Set"
+			SetCommand="%function(self)
+				local steps = GAMESTATE:GetCurrentSteps(0)
+				self:settext(steps:GetDescription())
+			end"
+		/>
+	</children></Layer>
+	
+	<Layer Type="ActorFrame" Name="panelP2" Condition="GAMESTATE:IsPlayerEnabled(1) "InitCommand="x,SCREEN_CENTER_X+5+DoublesOffset();y,SCREEN_CENTER_Y-66"><children>
+		<Layer 
+			File="pane.xml"
+		/>
+		<!-- real stats -->
+		<Layer Type="ActorFrame" InitCommand="x,110;y,20"><children>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*0" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(8)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*1" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(7)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*2" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(6)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*3" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(5)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*4" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(4)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*5" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(3)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*6" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(1)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*7" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetHoldNoteScores(2)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*8" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetHoldNoteScores(1)) end" />
+		</children></Layer>
+		
+		<!-- p2 score -->
+		<Layer
+			Type="BitmapText"
+			Font="_inconsolatasNumbers"
+			InitCommand="shadowlength,0;x,290;y,40;zoom,0.6;horizalign,right"
+			OnCommand="queuecommand,Set"
+			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PercentP2'):GetChild('PercentP2'):GetText()) end"
+		/>
+		
+		<!-- p2 mods -->
+		<Layer
+			Type="BitmapText"
+			Font="nunito"
+			InitCommand="shadowlength,0;x,8;y,270;zoom,0.45;horizalign,left;wrapwidthpixels,650"
+			OnCommand="queuecommand,Set"
+			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP2'):GetText()) end"
+		/>
+		
+		<!-- p2 difficulty and description lol -->
+		<Layer
+			Type="BitmapText"
+			Font="_nunito Bold small"
+			InitCommand="shadowlength,0;x,4;y,-14;zoom,0.6;horizalign,left;maxwidth,500;queuecommand,Set"
+			SetCommand="%function(self)
+				local a = GAMESTATE:GetCurrentSteps(1)
+				local b = a:GetRadarValues()
+				self:settext(DifficultyToThemedString(a:GetDifficulty())..' '..a:GetMeter())
+			end"
+		/>
+		
+		<Layer
+			Type="BitmapText"
+			Font="nunito"
+			InitCommand="shadowlength,0;x,4;y,2;zoom,0.5;horizalign,left;maxwidth,600;queuecommand,Set"
+			SetCommand="%function(self)
+				local steps = GAMESTATE:GetCurrentSteps(1)
+				self:settext(steps:GetDescription())
+			end"
+		/>
+	</children></Layer>
+</children><ActorFrame>

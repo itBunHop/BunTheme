@@ -1,0 +1,15 @@
+<BitmapText
+	Font="n_nunito Bold small"
+	InitCommand="%function(self)
+		self:x(SCREEN_WIDTH*0.5)
+		self:y(SCREEN_HEIGHT-100)
+		self:shadowlength(2)
+		self:zoom(0.8)
+		self:maxwidth((SCREEN_WIDTH-20)/0.8)
+		if GAMESTATE:IsCourseMode() then
+			self:settext(GAMESTATE:GetCurrentCourse():GetTranslitFullTitle())
+		else
+			self:settext(GAMESTATE:GetCurrentSong():GetTranslitMainTitle()..'\n'..GAMESTATE:GetCurrentSong():GetTranslitArtist())
+		end
+	end"
+/>

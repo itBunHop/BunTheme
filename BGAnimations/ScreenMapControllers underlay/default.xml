@@ -1,0 +1,15 @@
+<ActorFrame> <children>
+
+	<Layer Type="Quad" Command="diffuse,#00000099;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT"/>
+	
+	<Layer 
+		Type="BitmapText" 
+		Font="_nunito Bold small"
+		Text=""
+		InitCommand="zoom,0.45;shadowlength,0;x,SCREEN_CENTER_X;y,4;vertalign,top"
+		OnCommand="%function(self)
+			self:settext('[arrow keys] to move, [enter] to set a binding, [delete] to remove a binding and [escape] to leave\ngameplay uses \'Left\', \'Right\', \'Up\' and \'Down\' bindings but not the Action related keys\nif you don\'t have a numpad, you should bind buttons for P2 (the right side) to navigate menus')
+		end"
+	/>
+	
+	</children></ActorFrame> 

@@ -1,0 +1,40 @@
+<ActorFrame><children>
+
+	<!-- lifebar and combo -->
+	<Layer
+		Type="Quad"
+		InitCommand="diffuse,#000000;diffusealpha,0.5;stretchto,0,193,305,260"
+	
+	/>
+
+	<!-- the base -->
+	<Layer
+		Type="Quad"
+		InitCommand="diffuse,#444444;stretchto,0,10,305,194"
+	
+	/>
+	
+	<!-- mods (crying) -->
+	
+	<Layer
+		Type="Quad"
+		InitCommand="diffuse,#444444;stretchto,0,260,305,280"
+	
+	/>
+
+	<!-- labels are uncool -->
+	<Layer Type="ActorFrame" InitCommand="x,100;y,20"><children>
+		<Layer Type="BitmapText" Font="common normal" Text="Fantastic" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*0"/>
+		<Layer Type="BitmapText" Font="common normal" Text="Excellent" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*1"/>
+		<Layer Type="BitmapText" Font="common normal" Text="Great" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*2"/>
+		<Layer Type="BitmapText" Font="common normal" Text="Decent" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*3"/>
+		<Layer Type="BitmapText" Font="common normal" Text="Way Off" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*4"/>
+		<Layer Type="BitmapText" Font="common normal" Text="Miss" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*5"/>
+		<Layer Type="BitmapText" Font="common normal" Text="Mines" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*6"/>
+		<Layer Type="BitmapText" Font="common normal" Text="OK" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*7"/>
+		<Layer Type="BitmapText" Font="common normal" Text="NG" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*8"/>
+	</children></Layer>
+	
+	<!-- no numbers sad -->
+
+</children></ActorFrame>

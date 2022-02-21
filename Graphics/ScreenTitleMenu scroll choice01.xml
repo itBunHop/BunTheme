@@ -1,0 +1,10 @@
+<Layer
+	File="_ScreenTitleMenu choices"
+	Text="Play"
+	Font="_nunito Bold small"
+	InitCommand="setstate,0;pause;shadowlength,0"
+	GainFocusCommand="diffuse,#88FF88;zoom,1"
+	LoseFocusCommand="diffuse,#FFFFFF;;zoom,0.8"
+	EnabledCommand=""
+	DisabledCommand="diffuse,0.5,0.5,0.5,1"
+/>

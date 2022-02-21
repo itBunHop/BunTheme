@@ -1,0 +1,15 @@
+<ActorFrame><children>
+	<Layer
+		Type="AutoActor"
+		File="@THEME:GetPath(EC_GRAPHICS,'','logo (doubleres)')"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y"
+	/>
+	
+	<Layer
+		Type="BitmapText"
+		Font="common normal"
+		Text="ScreenLogo"
+		InitCommand="zoom,0.6;shadowlength,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+80"
+		
+	/>
+</children></ActorFrame>

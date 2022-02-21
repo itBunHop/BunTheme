@@ -1,0 +1,60 @@
+<ActorFrame>
+	<children>
+	
+	<!-- the song info (the banner is not here because its not good at transforming really big ones) -->
+	<Layer
+		Type="Quad"
+		InitCommand="diffuse,#000000;diffusealpha,0.75;stretchto,10,SCREEN_CENTER_Y-124,SCREEN_WIDTH-10,SCREEN_CENTER_Y-88;fadeleft,0.2;faderight,0.2"
+	/>
+	
+	
+	<Layer
+		Type="BitmapText"
+		Font="nunito Bold"
+		Text="song"
+		InitCommand="hidden,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-113;shadowlength,0;zoom,0.75;maxwidth,800;queuecommand,Set"
+		SetCommand="%function(self)
+		local coursemode = GAMESTATE:IsCourseMode()
+		local native = PREFSMAN:GetPreference('ShowNativeLanguage')
+		if coursemode then
+			local a = GAMESTATE:GetCurrentCourse()
+			if native then
+				self:settext(a:GetDisplayFullTitle())
+			else
+				self:settext(a:GetTranslitFullTitle())
+			end
+		else
+			local a = GAMESTATE:GetCurrentSong()
+			if native then
+				self:settext(a:GetDisplayMainTitle())
+			else
+				self:settext(a:GetTranslitMainTitle())
+			end
+		end
+		-- for safety you know in case
+		self:hidden(0)
+		end"
+	/>
+	
+	<Layer
+		Type="BitmapText"
+		Font="common normal"
+		Text="art"
+		Condition="not GAMESTATE:IsCourseMode()"
+		InitCommand="hidden,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-96;shadowlength,0;zoom,0.5;maxwidth,1200;queuecommand,Set"
+		SetCommand="%function(self)
+		local a = GAMESTATE:GetCurrentSong()
+		if PREFSMAN:GetPreference('ShowNativeLanguage') then
+			self:settext(a:GetDisplayArtist())
+		else
+			self:settext(a:GetTranslitArtist())
+		end
+		self:hidden(0)
+		end"
+	/>
+	
+	<!-- your epic things here -->
+	<Layer File="OffsetPlot" InitCommand="y,14"/>
+		
+	</children>
+</ActorFrame>
