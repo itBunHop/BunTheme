@@ -1,6 +1,7 @@
 # BunTheme
 (placeholder name)
 
+![logo](https://raw.githubusercontent.com/itBunHop/BunTheme/main/Graphics/logo%20(doubleres).png)
 a notITG theme
 
 ## features
