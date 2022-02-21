@@ -15,7 +15,8 @@ my friends have told me to get it working functionally and work on visuals later
 
 ## features hopefully to implement
 - better options
-- judgment fonts
+- judgment fonts (i guess)
+- ScreenGameplay interface for non mods
 - suggest warnings on various files for problems such as loud volume or epilepsy and taking breaks
 
 
