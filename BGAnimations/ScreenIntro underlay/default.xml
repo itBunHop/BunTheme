@@ -7,7 +7,7 @@
 	
 	<Layer
 		Type="BitmapText"
-		Font="common normal"
+		Font="_inconsolata"
 		Text="ScreenIntro"
 		InitCommand="zoom,0.6;shadowlength,0;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+80"
 		

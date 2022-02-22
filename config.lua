@@ -17,7 +17,7 @@ wraps = {
 -- 2: YOU DIED
 -- 3: Wasted
 -- Scroll through them with Action5
-FailOverlay = 3
+FailOverlay = 2
 
 -- Used by OpenITG only; see NotITGPrefs.ini for the NotITG variant
 -- Hides song title and banner in ScreenEdit

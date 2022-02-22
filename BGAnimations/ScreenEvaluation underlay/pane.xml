@@ -31,8 +31,8 @@
 		<Layer Type="BitmapText" Font="common normal" Text="Way Off" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*4"/>
 		<Layer Type="BitmapText" Font="common normal" Text="Miss" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*5"/>
 		<Layer Type="BitmapText" Font="common normal" Text="Mines" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*6"/>
-		<Layer Type="BitmapText" Font="common normal" Text="OK" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*7"/>
-		<Layer Type="BitmapText" Font="common normal" Text="NG" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*8"/>
+		<Layer Type="BitmapText" Font="common normal" Text="Holds" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*7"/>
+		<Layer Type="BitmapText" Font="common normal" Text="Rolls" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*8"/>
 	</children></Layer>
 	
 	<!-- no numbers sad -->

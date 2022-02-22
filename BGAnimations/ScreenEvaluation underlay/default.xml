@@ -6,7 +6,7 @@
 		/>
 		
 		<!-- real stats -->
-		<Layer Type="ActorFrame" InitCommand="x,110;y,20"><children>
+		<Layer Type="ActorFrame" InitCommand="x,110;y,20" Name="StatsP1"><children>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*0" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(8)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*1" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(7)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*2" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(6)) end" />
@@ -14,20 +14,35 @@
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*4" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(4)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*5" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(3)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*6" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(1)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*7" 
-				OnCommand="%function(self) 
-					local a = GAMESTATE:GetCurrentSteps(0):GetRadarValues()
+			<Layer Type="BitmapText" 
+				Font="_nunito Bold small" 
+				Text="" 		
+				InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*7"
+				OnCommand="queuecommand,Set"
+				SetCommand="%function(self) 
+					local a = SCREENMAN:GetTopScreen():GetChild('HoldsTextP1'):GetText()
 					
-					self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetHoldNoteScores(2)..' / '..((a:GetValue(7))+(a:GetValue(10)))) end" 
+					self:settext(string.gsub(string.gsub(a,' ',''),'/',' / '))
+				end" 
 			/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*8" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetHoldNoteScores(1)) end" />
+			<Layer Type="BitmapText" 
+				Font="_nunito Bold small" 
+				Text="" 		
+				InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*8"
+				OnCommand="queuecommand,Set"
+				SetCommand="%function(self) 
+					local a = SCREENMAN:GetTopScreen():GetChild('RollsTextP1'):GetText()
+					
+					self:settext(string.gsub(string.gsub(a,' ',''),'/',' / '))
+				end" 
+			/>
 		</children></Layer>
 		
 		<!-- p1 score -->
 		<Layer
 			Type="BitmapText"
-			Font="_inconsolatasNumbers"
-			InitCommand="shadowlength,0;x,290;y,40;zoom,0.6;horizalign,right"
+			Font="_inconsolata"
+			InitCommand="shadowlength,0;x,290;y,40;zoom,0.7;horizalign,right"
 			OnCommand="queuecommand,Set"
 			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PercentP1'):GetChild('PercentP1'):GetText()) end"
 		/>
@@ -69,7 +84,7 @@
 			File="pane.xml"
 		/>
 		<!-- real stats -->
-		<Layer Type="ActorFrame" InitCommand="x,110;y,20"><children>
+		<Layer Type="ActorFrame" InitCommand="x,110;y,20" Name="statsP2"><children>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*0" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(8)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*1" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(7)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*2" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(6)) end" />
@@ -78,20 +93,35 @@
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*5" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(3)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*6" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(1)) end" />
 			
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*7" 
-				OnCommand="%function(self) 
-					local a = GAMESTATE:GetCurrentSteps(1):GetRadarValues()
+			<Layer Type="BitmapText" 
+				Font="_nunito Bold small" 
+				Text="" 		
+				InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*7"
+				OnCommand="queuecommand,Set"
+				SetCommand="%function(self) 
+					local a = SCREENMAN:GetTopScreen():GetChild('HoldsTextP2'):GetText()
 					
-					self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetHoldNoteScores(2)..' / '..((a:GetValue(7))+(a:GetValue(10)))) end" 
+					self:settext(string.gsub(string.gsub(a,' ',''),'/',' / '))
+				end" 
 			/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*8" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetHoldNoteScores(1)) end" />
+			<Layer Type="BitmapText" 
+				Font="_nunito Bold small" 
+				Text="" 		
+				InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*8"
+				OnCommand="queuecommand,Set"
+				SetCommand="%function(self) 
+					local a = SCREENMAN:GetTopScreen():GetChild('RollsTextP2'):GetText()
+					
+					self:settext(string.gsub(string.gsub(a,' ',''),'/',' / '))
+				end" 
+			/>
 		</children></Layer>
 		
 		<!-- p2 score -->
 		<Layer
 			Type="BitmapText"
-			Font="_inconsolatasNumbers"
-			InitCommand="shadowlength,0;x,290;y,40;zoom,0.6;horizalign,right"
+			Font="_inconsolata"
+			InitCommand="shadowlength,0;x,290;y,40;zoom,0.7;horizalign,right"
 			OnCommand="queuecommand,Set"
 			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PercentP2'):GetChild('PercentP2'):GetText()) end"
 		/>

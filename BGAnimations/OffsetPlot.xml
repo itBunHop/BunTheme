@@ -620,20 +620,20 @@ end"><children>
 		/>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_misoreg small"
-			OnCommand="xy,oplot_plotWidth/2,-oplot_plotHeight/2-6;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
+		<Layer Type="BitmapText" File="_nunito small"
+			OnCommand="xy,oplot_plotWidth/2,-oplot_plotHeight/2-2;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_misoreg small"
-			OnCommand="xy,oplot_plotWidth/2,oplot_plotHeight/2-6;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
+		<Layer Type="BitmapText" File="_nunito small"
+			OnCommand="xy,oplot_plotWidth/2,oplot_plotHeight/2-2;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_misoreg small"
+		<Layer Type="BitmapText" Text="" Font="_nunito Bold small"
 		UpdateSpellDisplayP1MessageCommand="%function(self)
 			local pn = 1
 			if curcard[pn] == 0 then
@@ -644,7 +644,7 @@ end"><children>
 		end"
 		OnCommand="%function(self)
 			self:hidden(1)
-			self:xy(83,-98)
+			self:xy(83,-88)
 			self:zoom(.8)
 			self:shadowlength(0)
 			
@@ -1161,20 +1161,20 @@ end"><children>
 		/>
 
 		<!-- Early/late markers -->
-		<Layer Type="BitmapText" File="_misoreg small"
-			OnCommand="xy,oplot_plotWidth/2,-oplot_plotHeight/2-6;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
+		<Layer Type="BitmapText" File="_nunito small"
+			OnCommand="xy,oplot_plotWidth/2,-oplot_plotHeight/2-2;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,top;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Late (+'..oplot_maxOffset..'ms)')
 			end"
 		/>
-		<Layer Type="BitmapText" File="_misoreg small"
-			OnCommand="xy,oplot_plotWidth/2,oplot_plotHeight/2-6;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
+		<Layer Type="BitmapText" File="_nunito small"
+			OnCommand="xy,oplot_plotWidth/2,oplot_plotHeight/2-2;shadowlength,0;zoom,0.4;diffusealpha,.2;horizalign,right;vertalign,bottom;queuecommand,DoText"
 			DoTextCommand="%function(self)
 				self:settext('Early (-'..oplot_maxOffset..'ms)')
 			end"
 		/>
 		
-		<Layer Type="BitmapText" Text="" Font="_misoreg small"
+		<Layer Type="BitmapText" Text="" Font="_nunito Bold small"
 		UpdateSpellDisplayP2MessageCommand="%function(self)
 			local pn = 2
 			if curcard[pn] == 0 then
@@ -1185,7 +1185,7 @@ end"><children>
 		end"
 		OnCommand="%function(self)
 			self:hidden(1)
-			self:xy(-83,-98)
+			self:xy(-83,-88)
 			self:zoom(.8)
 			self:shadowlength(0)
 			
