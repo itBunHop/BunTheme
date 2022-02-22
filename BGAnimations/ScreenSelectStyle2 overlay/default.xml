@@ -6,5 +6,4 @@
 		MadeChoiceP2MessageCommand="playcommand,GoOff"
 		GoOffCommand="linear,0.5;diffusealpha,0" 
 	/>
-	<AutoActor File="../_join overlay" />
 </children></ActorFrame>

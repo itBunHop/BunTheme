@@ -14,7 +14,12 @@
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*4" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(4)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*5" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(3)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*6" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(1)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*7" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetHoldNoteScores(2)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*7" 
+				OnCommand="%function(self) 
+					local a = GAMESTATE:GetCurrentSteps(0):GetRadarValues()
+					
+					self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetHoldNoteScores(2)..' / '..((a:GetValue(7))+(a:GetValue(10)))) end" 
+			/>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*8" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetHoldNoteScores(1)) end" />
 		</children></Layer>
 		
@@ -72,7 +77,13 @@
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*4" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(4)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*5" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(3)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*6" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(1)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*7" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetHoldNoteScores(2)) end" />
+			
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*7" 
+				OnCommand="%function(self) 
+					local a = GAMESTATE:GetCurrentSteps(1):GetRadarValues()
+					
+					self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetHoldNoteScores(2)..' / '..((a:GetValue(7))+(a:GetValue(10)))) end" 
+			/>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*8" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetHoldNoteScores(1)) end" />
 		</children></Layer>
 		
