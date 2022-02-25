@@ -133,7 +133,7 @@
 		Type="BitmapText"
 		Font="_nunito Bold"
 		Text="group name"
-		InitCommand="x,SCREEN_CENTER_X-166;y,SCREEN_CENTER_Y-220;shadowlength,0;zoom,0.6;diffuse,#FFFFFF;maxwidth,500"
+		InitCommand="x,SCREEN_CENTER_X-166;y,SCREEN_CENTER_Y-222;shadowlength,0;zoom,0.6;diffuse,#FFFFFF;maxwidth,500"
 		SetCommand="%function(self)
 		local gcs = GAMESTATE:GetCurrentSong()
 		if gcs then

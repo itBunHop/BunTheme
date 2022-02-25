@@ -2,13 +2,13 @@
 	<children>
 		<Actor
 			Type="Quad"
-			InitCommand="diffuse,#000000;stretchto,0,0,SCREEN_CENTER_X,SCREEN_CENTER_Y;diffusealpha,0"
+			InitCommand="diffuse,#000000;stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffusealpha,0"
 			OnCommand="accelerate,0.5;diffusealpha,1"
 		/>
 		
 		<Actor
 			File="../_song credit display"
-			OnCommand="diffusealpha,0;linear,0.1;diffusealpha,1;sleep,0.7;linear,0.1;diffusealpha,0"
+			OnCommand="diffusealpha,0;linear,0.25;diffusealpha,1;sleep,1;linear,0.25;diffusealpha,0"
 		/>
 		
 		<ActorFrame Condition="GAMESTATE:IsCourseMode()" ><children>
