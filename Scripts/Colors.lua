@@ -32,6 +32,6 @@ function JudgmentColor(jud)
 	if jud == 3 then return "#32FA64" end
 	if jud == 4 then return "#DC78FF" end
 	if jud == 5 then return "#FA8C64" end
-	if jud == 6 then return "#FA3232" end
-	return "1,1,1,1"
+	if jud == 6 then return "#FA4040" end
+	return "#FFFFFF"
 end

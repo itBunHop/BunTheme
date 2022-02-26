@@ -1,5 +1,9 @@
 <ActorFrame>
 	<children>
-	
+		<Layer
+			Type="Quad"
+			InitCommand="hidden,1"
+			OnCommand="sleep,1"
+		/>
 	</children>
 </ActorFrame>

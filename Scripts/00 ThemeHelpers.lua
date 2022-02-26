@@ -15,7 +15,7 @@ function WideScale(AR4_3, AR16_9)
 	return scale( SCREEN_WIDTH, 640, 853.333333, AR4_3, AR16_9 )
 end
 
-function SL_WideScale(AR4_3, AR16_9)
+function Clamped_WideScale(AR4_3, AR16_9)
 	local a = clamp(scale( SCREEN_WIDTH, 640, 853.333333, AR4_3, AR16_9 ),AR4_3,AR16_9)
 	if a == AR4_3 and SCREEN_WIDTH ~= 640 then return AR16_9 else return a end
 	-- why

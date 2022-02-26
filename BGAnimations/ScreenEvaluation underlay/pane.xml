@@ -10,7 +10,7 @@
 	<!-- the base -->
 	<Layer
 		Type="Quad"
-		InitCommand="diffuse,#444444;stretchto,0,10,305,194"
+		InitCommand="diffuse,#222222;stretchto,0,10,305,194"
 	
 	/>
 	
@@ -18,22 +18,11 @@
 	
 	<Layer
 		Type="Quad"
-		InitCommand="diffuse,#444444;stretchto,0,260,305,280"
+		InitCommand="diffuse,#222222;stretchto,0,260,305,280"
 	
 	/>
 
 	<!-- labels are uncool -->
-	<Layer Type="ActorFrame" InitCommand="x,100;y,20"><children>
-		<Layer Type="BitmapText" Font="common normal" Text="Fantastic" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*0"/>
-		<Layer Type="BitmapText" Font="common normal" Text="Excellent" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*1"/>
-		<Layer Type="BitmapText" Font="common normal" Text="Great" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*2"/>
-		<Layer Type="BitmapText" Font="common normal" Text="Decent" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*3"/>
-		<Layer Type="BitmapText" Font="common normal" Text="Way Off" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*4"/>
-		<Layer Type="BitmapText" Font="common normal" Text="Miss" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*5"/>
-		<Layer Type="BitmapText" Font="common normal" Text="Mines" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*6"/>
-		<Layer Type="BitmapText" Font="common normal" Text="Holds" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*7"/>
-		<Layer Type="BitmapText" Font="common normal" Text="Rolls" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*8"/>
-	</children></Layer>
 	
 	<!-- no numbers sad -->
 
