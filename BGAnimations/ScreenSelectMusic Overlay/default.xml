@@ -218,7 +218,7 @@
 	
 	<Layer
 		Type="Quad"
-		InitCommand="stretchto,SCREEN_CENTER_X+320,0,SCREEN_CENTER_X+324,SCREEN_HEIGHT;diffuse,#FFFFFF"
+		InitCommand="stretchto,SCREEN_CENTER_X+426.666667,0,SCREEN_CENTER_X+430.666667,SCREEN_HEIGHT;diffuse,#FFFFFF"
 	/>
 	
 </children> </ActorFrame>
