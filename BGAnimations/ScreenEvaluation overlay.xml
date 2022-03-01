@@ -4,7 +4,7 @@
 	<!-- the song info (the banner is not here because its not good at transforming really big ones) -->
 	<Layer
 		Type="Quad"
-		InitCommand="diffuse,#000000;diffusealpha,0.75;stretchto,10,SCREEN_CENTER_Y-124,SCREEN_WIDTH-10,SCREEN_CENTER_Y-88;fadeleft,0.2;faderight,0.2"
+		InitCommand="diffuse,#000000;diffusealpha,0.75;stretchto,SCREEN_CENTER_X-310,SCREEN_CENTER_Y-124,SCREEN_CENTER_X+310,SCREEN_CENTER_Y-88;fadeleft,0.2;faderight,0.2"
 	/>
 	
 	

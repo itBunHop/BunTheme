@@ -1,16 +1,16 @@
 <ActorFrame> <children>
-	<Layer Type="ActorFrame"
-		OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+24"
-		> <children>
+	<Layer Type="ActorFrame"OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+20"> <children>
 		<Layer
 			Type="Quad"
-			InitCommand="stretchto,-200,-10,200,10;diffuse,#000000AA"
+			InitCommand="stretchto,0,-10,0,10;diffuse,#000000AA"
+			OnCommand="%function(self) self:zoomx(WideScale(300,400)) end"
 		/>
 		<Layer
 			Type="SongMeterDisplay"
-			StreamWidth="400"
+			StreamWidth="300"
 			StreamPath="meter stream"
 			InitCommand="zoomy,20;diffuse,#00FFFF88"
+			OnCommand="%function(self) self:zoomx(WideScale(1,1.333333)) end"
 		>
 			<Tip
 				File="tip"
@@ -21,13 +21,13 @@
 		<Layer
 			Type="BitmapText"
 			Font="_nunito Bold"
-			OnCommand="y,-1;zoom,.4;shadowlength,0;maxwidth,380/0.4"
-			InitCommand="animate,0;playcommand,Update"
+			OnCommand="%function(self) self:y(-1) self:zoom(.4) self:shadowlength(0) self:maxwidth(WideScale(300,396)/0.4) end"
+			InitCommand="playcommand,Update"
 			CurrentSongChangedMessageCommand="playcommand,Update"
 			UpdateCommand="%SetFromSongTitleAndCourseTitle"
 		/>
-		
-		<Layer File="meter frame" />
+		<!-- its 300 - 396 because image stretching is not great -->.
+		<Layer File="meter frame" InitCommand="%function(self) self:zoomx(WideScale(1,1.333333)) end"/>
 	</children> </Layer>
 	
 	<!-- bpm is awes but not bpmdisplay (that one is not cool) -->
@@ -45,48 +45,9 @@
 		end"
 	/>
 	
-	<!-- Difficulty: -->
-	<Layer Type="ActorFrame"
-		OnCommand="sleep,0.5;queuecommand,TweenOn"
-		OffCommand="queuecommand,TweenOff"
-		> <children>
-		
-		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="x,SCREEN_CENTER_X-257;y,SCREEN_TOP+25"><children>
-			<Actor
-				File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
-				OnCommand="animate,0;playcommand,Update"
-				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
-				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
-				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_1) end"
-			/>
-			<Actor
-				Class="DifficultyMeter"
-				Type="ScreenGameplay DifficultyMeterP1"
-				OnCommand="playcommand,Update"
-				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
-				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
-				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_1)) end"
-			/>
-		</children></ActorFrame>
-		
-		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="x,SCREEN_CENTER_X+257;y,SCREEN_TOP+25"><children>
-			<Actor
-				File="@THEME:GetPath(EC_GRAPHICS,'','_difficulty icons')"
-				OnCommand="zoomx,-1;animate,0;playcommand,Update"
-				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
-				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
-				UpdateCommand="%function(self,parent) SetDifficultyFrameFromSteps(self, PLAYER_2) end"
-			/>
-			<Actor
-				Class="DifficultyMeter"
-				Type="ScreenGameplay DifficultyMeterP2"
-				OnCommand="playcommand,Update"
-				CurrentStepsP1ChangedMessageCommand="playcommand,Update"
-				CurrentStepsP2ChangedMessageCommand="playcommand,Update"
-				UpdateCommand="%function(self) self:SetFromSteps(GAMESTATE:GetCurrentSteps(PLAYER_2)) end"
-			/>
-		</children></ActorFrame>
-		
+	<!-- Difficulty (soon) -->
+	<Layer Type="ActorFrame" OnCommand="hidden,1" > <children>
+	
 	</children> </Layer>
 
 	<ActorFrame
