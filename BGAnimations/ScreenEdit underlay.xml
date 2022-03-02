@@ -30,7 +30,7 @@
 		/>
 		
 		<BitmapText
-			Text="Press SELECT::  button for a::  list of::  commands::::Press START::  button for the::  Edit Menu"
+			Text="Press F1::  button for a::  list of::  commands::::Press START::  button for the::  Edit Menu"
 			Font="_eurostile normal"
 			InitCommand="ShadowLength,2;zoom,0.6;horizalign,left;x,SCREEN_LEFT+30;y,SCREEN_BOTTOM-90"
 			OnCommand=""
