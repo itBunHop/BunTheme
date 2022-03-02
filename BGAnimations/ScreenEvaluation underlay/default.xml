@@ -1,10 +1,10 @@
 <ActorFrame><children>
-	
 	<Layer Type="ActorFrame" Name="panelP1" Condition="GAMESTATE:IsPlayerEnabled(0) "InitCommand="x,SCREEN_CENTER_X-310+DoublesOffset();y,SCREEN_CENTER_Y-66"><children>
 		<Layer 
 			File="pane.xml"
 			Name="paneP1"
 		/>
+		
 		<!-- label -->
 		<Layer Type="ActorFrame" UpdateSpellDisplayP1MessageCommand="%function(self) local pn = 1 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" InitCommand="x,100;y,20"><children>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Fantastic" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*0" OnCommand="@'diffuse,'..JudgmentColor(1)"/>
@@ -96,6 +96,7 @@
 			File="pane.xml"
 			Name="paneP2"
 		/>
+		
 		<!-- label -->
 		<Layer Type="ActorFrame" UpdateSpellDisplayP2MessageCommand="%function(self) local pn = 2 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" InitCommand="x,100;y,20"><children>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Fantastic" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*0" OnCommand="@'diffuse,'..JudgmentColor(1)"/>

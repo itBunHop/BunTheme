@@ -3,14 +3,14 @@
 	<!-- lifebar and combo -->
 	<Layer
 		Type="Quad"
-		InitCommand="diffuse,#000000;diffusealpha,0.5;stretchto,0,193,305,260"
+		InitCommand="diffuse,#000000;diffusealpha,0.5;stretchto,0,205,305,260"
 	
 	/>
 
 	<!-- the base -->
 	<Layer
 		Type="Quad"
-		InitCommand="diffuse,#222222;stretchto,0,10,305,194"
+		InitCommand="diffuse,#222222;stretchto,0,10,305,205"
 	
 	/>
 	

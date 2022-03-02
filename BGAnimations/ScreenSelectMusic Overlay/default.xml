@@ -221,5 +221,11 @@
 		InitCommand="stretchto,SCREEN_CENTER_X+426.666667,0,SCREEN_CENTER_X+430.666667,SCREEN_HEIGHT;diffuse,#FFFFFF"
 	/>
 	
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,#000000;diffusealpha,0"
+		OffCommand="linear,0.5;diffusealpha,1"
+	/>
+	
 </children> </ActorFrame>
 
