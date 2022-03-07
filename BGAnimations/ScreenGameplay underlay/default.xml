@@ -21,12 +21,12 @@
 		<Layer
 			Type="BitmapText"
 			Font="_nunito Bold"
-			OnCommand="%function(self) self:y(-1) self:zoom(.4) self:shadowlength(0) self:maxwidth(WideScale(300,396)/0.4) end"
+			OnCommand="%function(self) self:y(-1) self:zoom(.4) self:shadowlength(0) self:maxwidth(WideScale(296,396)/0.4) end"
 			InitCommand="playcommand,Update"
 			CurrentSongChangedMessageCommand="playcommand,Update"
 			UpdateCommand="%SetFromSongTitleAndCourseTitle"
 		/>
-		<!-- its 300 - 396 because image stretching is not great -->.
+		<!-- its 296 - 396 because image stretching is not great -->.
 		<Layer File="meter frame" InitCommand="%function(self) self:zoomx(WideScale(1,1.333333)) end"/>
 	</children> </Layer>
 	

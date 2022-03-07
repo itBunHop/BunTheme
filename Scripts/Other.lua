@@ -207,8 +207,6 @@ function GetEditStepsText()
 	local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
 	if steps == nil then 
 		return ""
-	elseif steps:GetDifficulty() == DIFFICULTY_EDIT then 
-		return steps:GetDescription()
 	else 
 		return DifficultyToThemedString(steps:GetDifficulty())
 	end
