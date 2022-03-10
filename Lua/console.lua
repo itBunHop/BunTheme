@@ -26,7 +26,7 @@ local cursor = {
 local height = DevBuffer:GetHeight()
 local height2 = DevTest:GetHeight()-height*2
 local quadheight = 6+height*41*scale
-local inputBase = 14+height*39*scale
+local inputBase = 12+height*39*scale
 
 DevBuffer:x(10) 
 DevBuffer:y(8+height*37*scale)
