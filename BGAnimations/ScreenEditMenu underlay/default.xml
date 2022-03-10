@@ -1,0 +1,19 @@
+<ActorFrame><children>
+	<Layer Type="Quad" InitCommand="diffuse,#000000;diffusealpha,0.5;stretchto,SCREEN_CENTER_X-310,SCREEN_CENTER_Y+110,SCREEN_CENTER_X+310,SCREEN_CENTER_Y+160"/>
+	<Layer File="main.png" Command="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-30"/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="hidden,1"
+		OnCommand="queuecommand,Move"
+		MoveCommand="%function(self)
+			-- not at the song wheel, should set it to normal
+			local a = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('SongTextBanner'):GetChild('Title')
+			local b = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('SongTextBanner'):GetChild('Subtitle')
+			a:zoomx(0.5)
+			a:maxwidth(620)
+			b:zoomx(0.4)
+			b:maxwidth(620)
+		end"
+	/>
+</children></ActorFrame>
