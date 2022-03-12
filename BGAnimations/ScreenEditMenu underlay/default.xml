@@ -8,12 +8,17 @@
 		OnCommand="queuecommand,Move"
 		MoveCommand="%function(self)
 			-- not at the song wheel, should set it to normal
-			local a = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('SongTextBanner'):GetChild('Title')
-			local b = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('SongTextBanner'):GetChild('Subtitle')
-			a:zoomx(0.5)
-			a:maxwidth(620)
-			b:zoomx(0.4)
-			b:maxwidth(620)
+			local title = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('SongTextBanner'):GetChild('Title')
+			local subtitle = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('SongTextBanner'):GetChild('Subtitle')
+			local meter = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('Meter'):GetChild('Meter')
+			title:zoomx(0.5)
+			title:maxwidth(330/0.5)
+			subtitle:zoomx(0.4)
+			subtitle:maxwidth(330/0.4)
+			
+			meter:zoom(0.8)
+			meter:shadowlength(0)
+			
 		end"
 	/>
 </children></ActorFrame>

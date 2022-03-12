@@ -1,9 +1,9 @@
 OperatorMenuOptionRows = {}
-
-function offsetMS(pref, low, high)
+-- wow slsm5
+function offsetMS(pref, low, high,step)
 	local val = PREFSMAN:GetPreference(pref)
 	local ms = (val * 1000)	-- convert seconds to milliseconds
-	
+	local st = step or 1
 	ms = string.format('%i',round2(ms,0))
 
 
@@ -14,7 +14,7 @@ function offsetMS(pref, low, high)
 
 	-- _values as a temp table of values * 1000 as an intermediate step, not presented to players
 	--  choices as millisecond integers with "ms" appended, presented to players
-	local _values  = ThemeRange(low, high)
+	local _values  = ThemeRange(low, high,st)
 	local choices  = {}
 	for i=1,#_values do
 		table.insert(choices,tostring(_values[i])..'ms')
@@ -44,11 +44,13 @@ function offsetMS(pref, low, high)
 end
 
 OperatorMenuOptionRows.GlobalOffsetSeconds = function()
-	-- 100ms should be sufficient to accomodate for audio delay
 	return offsetMS('GlobalOffsetSeconds', -1000, 1000)
 end
 
 OperatorMenuOptionRows.VisualDelaySeconds = function()
-	-- up to 1s of visual delay, because some TVs are really slow
 	return offsetMS('VisualDelaySeconds', -1000, 1000)
+end
+
+OperatorMenuOptionRows.InputDebounceTime = function()
+	return offsetMS('InputDebounceTime', 0, 100,10)
 end
