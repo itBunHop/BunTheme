@@ -11,6 +11,7 @@
 			local title = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('SongTextBanner'):GetChild('Title')
 			local subtitle = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('SongTextBanner'):GetChild('Subtitle')
 			local meter = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('Meter'):GetChild('Meter')
+			local smeter = SCREENMAN:GetTopScreen():GetChild('EditMenu'):GetChild('SourceMeter'):GetChild('Meter')
 			title:zoomx(0.5)
 			title:maxwidth(330/0.5)
 			subtitle:zoomx(0.4)
@@ -18,6 +19,9 @@
 			
 			meter:zoom(0.8)
 			meter:shadowlength(0)
+			
+			smeter:zoom(0.8)
+			smeter:shadowlength(0)
 			
 		end"
 	/>

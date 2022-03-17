@@ -1,5 +1,22 @@
-<Actor
-	File="test"
-	OnCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y;diffusealpha,0;linear,0.3;diffusealpha,1"
-	OffCommand="linear,0.3;diffusealpha,0"
-/>
+<ActorFrame><children>
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,0,0,4,SCREEN_HEIGHT;diffuse,#0000FF"
+	/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,SCREEN_WIDTH-4,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,#0000FF"
+	/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,0,0,SCREEN_WIDTH,4;diffuse,#FF0000"
+	/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,0,SCREEN_HEIGHT-4,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,#FF0000"
+	/>
+
+</children></ActorFrame>
