@@ -54,7 +54,9 @@
 	</children> </ActorFrame>
 	
 	<!-- the song info -->
-	<Layer Type="ActorFrame" InitCommand="x,SCREEN_CENTER_X-270;y,SCREEN_CENTER_Y-70"><children>
+	<Layer Type="ActorFrame" 
+		InitCommand="x,SCREEN_CENTER_X-270;y,SCREEN_CENTER_Y-70"
+		OnCommand="%function(self) self:x(math.max(50,SCREEN_CENTER_X-426.6666665+50)) end"><children>
 		<!-- labels -->
 		<Layer
 			Type="BitmapText"
@@ -75,34 +77,31 @@
 			Font="_nunito Bold"
 			Text="Length:"
 			InitCommand="x,160;y,18;shadowlength,0;zoom,0.45;diffuse,#BBBBBB;horizalign,right"
+			OnCommand="%function(self) self:addx(Clamped_WideScale(0,40)) end"
 		/>
 		
 		<!-- infos -->
 		<Layer
-			Type="Quad"
-			InitCommand="hidden,1"
 			OnCommand="queuecommand,Move"
-			MoveCommand="%function(self)
+			MoveCommand="%function()
 				local a = SCREENMAN:GetTopScreen():GetChild('ArtistDisplay')
 				
-				a:x(SCREEN_CENTER_X-270+4)
+				a:x(math.max(50+4,SCREEN_CENTER_X-426.6666665+50+4))
 				a:y(SCREEN_CENTER_Y-70)
 				a:zoom(0.45)
 				a:horizalign('left')
-				a:maxwidth(550)
+				a:maxwidth(Clamped_WideScale(550,580*1.333333))
 				a:shadowlength(0)
 				a:hidden(0)
 			end"
 		/>
 		
 		<Layer
-			Type="Quad"
-			InitCommand="hidden,1"
 			OnCommand="queuecommand,Move"
-			MoveCommand="%function(self)
+			MoveCommand="%function()
 				local a = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
 				
-				a:x(SCREEN_CENTER_X-270+4)
+				a:x(math.max(50+4,SCREEN_CENTER_X-426.6666665+50+4))
 				a:y(SCREEN_CENTER_Y-70+18)
 				a:zoom(0.65)
 				a:horizalign('left')
@@ -112,13 +111,12 @@
 		/>
 		
 		<Layer
-			Type="Quad"
-			InitCommand="hidden,1"
 			OnCommand="queuecommand,Move"
-			MoveCommand="%function(self)
+			MoveCommand="%function()
 				local a = SCREENMAN:GetTopScreen():GetChild('TotalTime')
 				
-				a:x(SCREEN_CENTER_X-270+164)
+				a:x(math.max(50+164,SCREEN_CENTER_X-426.6666665+50+164))
+				a:addx(Clamped_WideScale(0,40))
 				a:y(SCREEN_CENTER_Y-70+18)
 				a:zoom(0.65)
 				a:horizalign('left')
@@ -133,7 +131,8 @@
 		Type="BitmapText"
 		Font="_nunito Bold"
 		Text="group name"
-		InitCommand="x,SCREEN_CENTER_X-166;y,SCREEN_CENTER_Y-222;shadowlength,0;zoom,0.6;diffuse,#FFFFFF;maxwidth,500"
+		InitCommand="x,SCREEN_CENTER_X-160-6;y,SCREEN_CENTER_Y-222;shadowlength,0;zoom,0.6;diffuse,#FFFFFF;maxwidth,500"
+		OnCommand="%function(self) self:x(math.max(SCREEN_WIDTH*0.25-6,SCREEN_CENTER_X-213.33333325-6)) self:maxwidth(Clamped_WideScale(500,500*1.333333)) end"
 		SetCommand="%function(self)
 		local gcs = GAMESTATE:GetCurrentSong()
 		if gcs then
@@ -151,6 +150,7 @@
 		Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 		InitCommand="x,SCREEN_CENTER_X-300;y,SCREEN_CENTER_Y+96"
+		OnCommand="%function(self) self:x(math.max(20,SCREEN_CENTER_X-406.666667)) end"
 	><children>
 		<Layer 
 			Type="BitmapText"
@@ -161,8 +161,9 @@
 		/>
 		<Layer 
 			Font="_nunito"
-			Text="???" 
-			OnCommand="x,5;y,-29;zoom,0.375;shadowlength,0;horizalign,left;maxwidth,730" 
+			Text="???"
+			InitCommand="x,5;y,-29;zoom,0.375;shadowlength,0;horizalign,left" 
+			OnCommand="%function(self) self:maxwidth(Clamped_WideScale(730,750*1.333333)) end"
 			SetCommand="%function(self)
 				local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
 				if steps then
@@ -182,7 +183,8 @@
 	<Layer
 		Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-		InitCommand="x,SCREEN_CENTER_X-300;y,SCREEN_CENTER_Y+96"
+		InitCommand="y,SCREEN_CENTER_Y+96"
+		OnCommand="%function(self) self:x(math.max(20,SCREEN_CENTER_X-406.666667)) end"
 	><children>
 		<Layer 
 			Type="BitmapText"
@@ -194,7 +196,8 @@
 		<Layer 
 			Font="_nunito"
 			Text="???" 
-			OnCommand="x,5;y,-15;zoom,0.375;shadowlength,0;horizalign,left;maxwidth,730" 
+			InitCommand="x,5;y,-15;zoom,0.375;shadowlength,0;horizalign,left"
+			OnCommand="%function(self) self:maxwidth(Clamped_WideScale(730,750*1.333333)) end"
 			SetCommand="%function(self)
 				local steps = GAMESTATE:GetCurrentSteps(PLAYER_2)
 				if steps then
@@ -213,7 +216,7 @@
 	<!-- quad overlay -->
 	<Layer
 		Type="Quad"
-		InitCommand="stretchto,SCREEN_CENTER_X-324,0,SCREEN_CENTER_X-320,SCREEN_HEIGHT;diffuse,#FFFFFF"
+		InitCommand="stretchto,SCREEN_CENTER_X-430.666667,0,SCREEN_CENTER_X-426.666667,SCREEN_HEIGHT;diffuse,#FFFFFF"
 	/>
 	
 	<Layer
