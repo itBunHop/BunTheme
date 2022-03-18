@@ -145,11 +145,13 @@
 		CurrentSongChangedMessageCommand="playcommand,Set"
 	/>
 	
-	<!-- p1 description -->
+	<!-- p1 things -->
+	
+	<!-- description -->
 	<Layer
 		Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-		InitCommand="x,SCREEN_CENTER_X-300;y,SCREEN_CENTER_Y+96"
+		InitCommand="y,SCREEN_CENTER_Y+67"
 		OnCommand="%function(self) self:x(math.max(20,SCREEN_CENTER_X-406.666667)) end"
 	><children>
 		<Layer 
@@ -157,12 +159,12 @@
 			Condition="not GAMESTATE:IsCourseMode()"
 			Font="_nunito Bold"
 			Text="P1"
-			InitCommand="x,-1;y,-29;ShadowLength,0;horizalign,right;zoom,0.375"
+			InitCommand="x,-1;ShadowLength,0;horizalign,right;zoom,0.375"
 		/>
 		<Layer 
 			Font="_nunito"
 			Text="???"
-			InitCommand="x,5;y,-29;zoom,0.375;shadowlength,0;horizalign,left" 
+			InitCommand="x,4;zoom,0.375;shadowlength,0;horizalign,left" 
 			OnCommand="%function(self) self:maxwidth(Clamped_WideScale(730,750*1.333333)) end"
 			SetCommand="%function(self)
 				local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
@@ -179,11 +181,85 @@
 		/>
 	</children></Layer>
 	
-	<!-- p2 description -->
+	<!-- pane display -->
+	<Layer
+		Type="ActorFrame"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
+		InitCommand="y,SCREEN_CENTER_Y+67+10"
+		CurrentSongChangedMessageCommand="playcommand,Set" 
+		CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+	><children>
+	
+		<Layer File="panedisplay.xml" InitCommand="@'diffuse,'..PlayerColor(PLAYER_1)"/>
+		<!-- more labels (problem is that inconsolata doesnt line up because line spacing -->
+		<Layer
+			Type="BitmapText"
+			Font="_nunito Bold small"
+			Text="???"
+			InitCommand="zoom,0.55;diffuse,#000000;shadowlength,0;horizalign,left;vertalign,top;x,44+4;y,4;diffusealpha,1"
+			SetCommand="%function(self)
+				if GAMESTATE:IsCourseMode() then
+				
+				else
+					local steps = GAMESTATE:GetCurrentSteps(0)
+					if steps then
+						local radar = steps:GetRadarValues()
+						self:settext(radar:GetValue(5)..'\n'..radar:GetValue(7)..'\n'..radar:GetValue(6))
+					else
+						self:settext('')
+					end
+				end
+			
+			end"
+		/>
+		
+		<Layer
+			Type="BitmapText"
+			Font="_nunito Bold small"
+			Text="???"
+			InitCommand="zoom,0.55;diffuse,#000000;shadowlength,0;horizalign,left;vertalign,top;x,144+4;y,4;diffusealpha,1"
+			OnCommand="%function(self) self:addx(Clamped_WideScale(0,36)) end"
+			SetCommand="%function(self)
+				if GAMESTATE:IsCourseMode() then
+				
+				else
+					local steps = GAMESTATE:GetCurrentSteps(0)
+					if steps then
+						local radar = steps:GetRadarValues()
+						self:settext(radar:GetValue(8)..'\n'..radar:GetValue(10)..'\n'..radar:GetValue(9))
+					else
+						self:settext('')
+					end
+				end
+			
+			end"
+		/>
+		
+		<!-- high scores no way -->
+		<Layer
+			Type="BitmapText"
+			Font="_nunito Bold small"
+			Text="???"
+			InitCommand="zoom,0.55;diffuse,#000000;shadowlength,0;horizalign,right;vertalign,top;x,244;y,4"
+			SetCommand="%function(self)
+				if GAMESTATE:IsCourseMode() then
+				
+				else
+					local a = SCREENMAN:GetTopScreen():GetChild('PaneDisplayP1')
+				end
+			end"
+			
+		/>
+	
+	</children></Layer>
+	
+	<!-- p2 things -->
+	
+	<!-- description -->
 	<Layer
 		Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-		InitCommand="y,SCREEN_CENTER_Y+96"
+		InitCommand="y,SCREEN_CENTER_Y+67+84"
 		OnCommand="%function(self) self:x(math.max(20,SCREEN_CENTER_X-406.666667)) end"
 	><children>
 		<Layer 
@@ -191,12 +267,12 @@
 			Condition="not GAMESTATE:IsCourseMode()"
 			Font="_nunito Bold"
 			Text="P2"
-			InitCommand="x,-1;y,-15;ShadowLength,0;horizalign,right;zoom,0.375"
+			InitCommand="x,-1;ShadowLength,0;horizalign,right;zoom,0.375"
 		/>
 		<Layer 
 			Font="_nunito"
 			Text="???" 
-			InitCommand="x,5;y,-15;zoom,0.375;shadowlength,0;horizalign,left"
+			InitCommand="x,4;zoom,0.375;shadowlength,0;horizalign,left"
 			OnCommand="%function(self) self:maxwidth(Clamped_WideScale(730,750*1.333333)) end"
 			SetCommand="%function(self)
 				local steps = GAMESTATE:GetCurrentSteps(PLAYER_2)
@@ -211,6 +287,17 @@
 			CurrentSongChangedMessageCommand="playcommand,Set" 
 			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
 		/>
+	</children></Layer>
+	
+	<!-- pane display -->
+	<Layer
+		Type="ActorFrame"
+		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
+		InitCommand="y,SCREEN_CENTER_Y+67+10+84"
+	><children>
+	
+		<Layer File="panedisplay.xml" InitCommand="@'diffuse,'..PlayerColor(PLAYER_2)"/>
+	
 	</children></Layer>
 	
 	<!-- quad overlay -->
