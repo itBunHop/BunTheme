@@ -1,0 +1,18 @@
+<ActorFrame><children>
+	
+	<!-- labels (crying) -->
+	<Layer
+		Type="BitmapText"
+		Font="_nunito Bold small"
+		Text="Steps::Holds::Jumps"
+		InitCommand="zoom,0.55;shadowlength,0;horizalign,right;vertalign,top;x,44;y,4"
+	/>
+	
+	<Layer
+		Type="BitmapText"
+		Font="_nunito Bold small"
+		Text="Mines::Rolls::Hands"
+		InitCommand="zoom,0.55;shadowlength,0;horizalign,right;vertalign,top;x,144;y,4"
+		OnCommand="%function(self) self:addx(Clamped_WideScale(0,36)) end"
+	/>
+</children></ActorFrame>
