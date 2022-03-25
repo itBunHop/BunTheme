@@ -12,4 +12,65 @@
 		end"
 	/>
 	
-	</children></ActorFrame> 
+	<Layer 
+		Type="BitmapText" 
+		Font="_nunito Bold small"
+		Text="Player 1"
+		InitCommand="@'zoom,0.75;shadowlength,0;x,SCREEN_CENTER_X-180;y,38;diffuse,'..PlayerColor(PLAYER_1)"
+	/>
+	
+	<Layer 
+		Type="BitmapText" 
+		Font="_nunito Bold small"
+		Text="Player 2"
+		InitCommand="@'zoom,0.75;shadowlength,0;x,SCREEN_CENTER_X+180;y,38;diffuse,'..PlayerColor(PLAYER_2)"
+	/>
+	
+	<Layer
+		OnCommand="queuecommand,Set"
+		SetCommand="%function()
+			--[[ queued because need to wait until it exists
+			12 to 38
+			
+			there could be a better implementation for this but it is good enough
+			]]
+			for i=12,38 do
+				local row = SCREENMAN(i)
+				local key  = row(1)
+				local sub  = row(2)
+				local P1K1 = row(3)
+				local P1K2 = row(4)
+				local P1K3 = row(5)
+				local P1K4 = row(6)
+				local P1k5 = row(7)
+				local P2K1 = row(8)
+				local P2K2 = row(9)
+				local P2K3 = row(10)
+				local P2K4 = row(11)
+				local P2k5 = row(12)
+				local spacing = 50
+				local margin = 30
+				
+				row:x(SCREEN_CENTER_X)
+				key:x(0)
+				key:zoom(0.65)
+				sub:x(0)
+				sub:zoom(0.45)
+				
+				P1K1:x(spacing*-5-margin)
+				P1K2:x(spacing*-4-margin)
+				P1K3:x(spacing*-3-margin)
+				P1K4:x(spacing*-2-margin)
+				P1k5:x(spacing*-1-margin)
+				P2K1:x(spacing*1+margin)
+				P2K2:x(spacing*2+margin)
+				P2K3:x(spacing*3+margin)
+				P2K4:x(spacing*4+margin)
+				P2k5:x(spacing*5+margin)
+				
+			end
+		
+		end"
+	/>
+	
+</children></ActorFrame> 
