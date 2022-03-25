@@ -41,67 +41,6 @@
 		/>
 	</children></Layer>
 	
-	<!-- pane display -->
-	<Layer
-		Type="ActorFrame"
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
-		InitCommand="y,SCREEN_CENTER_Y+67+10"
-		CurrentSongChangedMessageCommand="playcommand,Set" 
-		CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
-	><children>
-	
-		<Layer File="panedisplay.xml" InitCommand="@'diffuse,'..PlayerColor(PLAYER_1)"/>
-		<!-- more labels (problem is that inconsolata doesnt line up because line spacing -->
-		<Layer
-			Type="BitmapText"
-			Font="_nunito Bold small"
-			Text="???"
-			InitCommand="zoom,0.55;diffuse,#000000;shadowlength,0;horizalign,left;vertalign,top;x,44+4;y,4;diffusealpha,1"
-			SetCommand="%function(self)
-				if GAMESTATE:IsCourseMode() then
-				
-				else
-					local steps = GAMESTATE:GetCurrentSteps(0)
-					if steps then
-						local radar = steps:GetRadarValues()
-						self:settext(radar:GetValue(5)..'\n'..radar:GetValue(7)..'\n'..radar:GetValue(6))
-					else
-						self:settext('')
-					end
-				end
-			
-			end"
-		/>
-		
-		<Layer
-			Type="BitmapText"
-			Font="_nunito Bold small"
-			Text="???"
-			InitCommand="zoom,0.55;diffuse,#000000;shadowlength,0;horizalign,left;vertalign,top;x,144+4;y,4;diffusealpha,1"
-			OnCommand="%function(self) self:addx(Clamped_WideScale(0,36)) end"
-			SetCommand="%function(self)
-				if GAMESTATE:IsCourseMode() then
-				
-				else
-					local steps = GAMESTATE:GetCurrentSteps(0)
-					if steps then
-						local radar = steps:GetRadarValues()
-						self:settext(radar:GetValue(8)..'\n'..radar:GetValue(10)..'\n'..radar:GetValue(9))
-					else
-						self:settext('')
-					end
-				end
-			
-			end"
-		/>
-		
-		<!-- getting highscores that isnt using a notitg function is not fun -->
-		<Layer
-			
-		/>
-	
-	</children></Layer>
-	
 	<!-- p2 things -->
 	
 	<!-- description -->
@@ -137,62 +76,7 @@
 			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
 		/>
 	</children></Layer>
-	
-	<!-- pane display -->
-	<Layer
-		Type="ActorFrame"
-		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-		InitCommand="y,SCREEN_CENTER_Y+67+10+84"
-		CurrentSongChangedMessageCommand="playcommand,Set" 
-		CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
-	><children>
-	
-		<Layer File="panedisplay.xml" InitCommand="@'diffuse,'..PlayerColor(PLAYER_2)"/>
-		
-		<Layer
-			Type="BitmapText"
-			Font="_nunito Bold small"
-			Text="???"
-			InitCommand="zoom,0.55;diffuse,#000000;shadowlength,0;horizalign,left;vertalign,top;x,44+4;y,4;diffusealpha,1"
-			SetCommand="%function(self)
-				if GAMESTATE:IsCourseMode() then
-				
-				else
-					local steps = GAMESTATE:GetCurrentSteps(1)
-					if steps then
-						local radar = steps:GetRadarValues()
-						self:settext(radar:GetValue(5)..'\n'..radar:GetValue(7)..'\n'..radar:GetValue(6))
-					else
-						self:settext('')
-					end
-				end
-			
-			end"
-		/>
-		
-		<Layer
-			Type="BitmapText"
-			Font="_nunito Bold small"
-			Text="???"
-			InitCommand="zoom,0.55;diffuse,#000000;shadowlength,0;horizalign,left;vertalign,top;x,144+4;y,4;diffusealpha,1"
-			OnCommand="%function(self) self:addx(Clamped_WideScale(0,36)) end"
-			SetCommand="%function(self)
-				if GAMESTATE:IsCourseMode() then
-				
-				else
-					local steps = GAMESTATE:GetCurrentSteps(1)
-					if steps then
-						local radar = steps:GetRadarValues()
-						self:settext(radar:GetValue(8)..'\n'..radar:GetValue(10)..'\n'..radar:GetValue(9))
-					else
-						self:settext('')
-					end
-				end
-			
-			end"
-		/>
-	
-	</children></Layer>
+
 	<!-- quads underlay -->
 	
 	<!-- vertical (there is more in the overlay for wider screen) -->
