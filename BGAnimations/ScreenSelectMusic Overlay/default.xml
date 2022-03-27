@@ -147,8 +147,7 @@
 	
 	<!-- labels for players (it is here because overlay) -->
 	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" InitCommand="y,SCREEN_CENTER_Y+67+10;diffuse,#000000C8" />
-	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" InitCommand="y,SCREEN_CENTER_Y+67+10+84;diffuse,#000000C8" />
-	
+	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" InitCommand="y,SCREEN_CENTER_Y+67+10+69;diffuse,#000000C8" />
 	<!-- quad overlay -->
 	<Layer
 		Type="Quad"
