@@ -16,7 +16,6 @@
 	><children>
 		<Layer 
 			Type="BitmapText"
-			Condition="not GAMESTATE:IsCourseMode()"
 			Font="_nunito Bold"
 			Text="P1"
 			InitCommand="x,-1;ShadowLength,0;horizalign,right;zoom,0.375"
@@ -52,7 +51,6 @@
 	><children>
 		<Layer 
 			Type="BitmapText"
-			Condition="not GAMESTATE:IsCourseMode()"
 			Font="_nunito Bold"
 			Text="P2"
 			InitCommand="x,-1;ShadowLength,0;horizalign,right;zoom,0.375"

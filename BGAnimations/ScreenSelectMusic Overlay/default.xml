@@ -80,7 +80,7 @@
 			OnCommand="%function(self) self:addx(Clamped_WideScale(0,40)) end"
 		/>
 		
-		<!-- infos -->
+		<!-- infos (i am queueing to move a topscreen child because it doesnt exist on oncommand) -->
 		<Layer
 			OnCommand="queuecommand,Move"
 			MoveCommand="%function()
@@ -126,7 +126,7 @@
 		/>
 	</children></Layer>
 	
-	<!-- info -->
+	<!-- group info -->
 	<Layer
 		Type="BitmapText"
 		Font="_nunito Bold"
@@ -138,16 +138,21 @@
 		if gcs then
 			self:settext(gcs:GetGroupName())
 		else
-			self:settext('')
+			if GAMESTATE:IsCourseMode() then
+				self:settext('Marathon Mode')
+			else
+				self:settext('')
+			end
 		end
 		
 		end"
 		CurrentSongChangedMessageCommand="playcommand,Set"
 	/>
 	
-	<!-- labels for players (it is here because overlay) -->
+	<!-- labels for players (it is here because overlay is above the panedisplay, which i use and it makes me sad) -->
 	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" InitCommand="y,SCREEN_CENTER_Y+67+10;diffuse,#000000C8" />
 	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" InitCommand="y,SCREEN_CENTER_Y+67+10+69;diffuse,#000000C8" />
+	
 	<!-- quad overlay -->
 	<Layer
 		Type="Quad"

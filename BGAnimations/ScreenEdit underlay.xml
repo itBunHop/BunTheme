@@ -1,9 +1,9 @@
 <ActorFrame>
 	<children>
+		
 		<FadingBanner 
 			OnCommand="%function(self)
-				self:LoadFromSong(GAMESTATE:GetCurrentSong()); self:stretchto(0,0,209,82) self:x(88) self:y(64) self:zoom(0.3) self:queuecommand('Update')
-			end" 
+				self:LoadFromSong(GAMESTATE:GetCurrentSong()) self:diffusealpha(0) self:x(94) self:y(64) self:queuecommand('Update') end" 
 			UpdateCommand="%function(self)
 				if FUCK_EXE then
 					self:visible(PREFSMAN:GetPreference('EditorShowSongTitle') and 1 or 0)
@@ -16,5 +16,41 @@
 				
 			end"
 		/>
+		<Layer Type="ActorFrame" InitCommand="queuecommand,Update"
+			UpdateCommand="%function(self)
+				if FUCK_EXE then
+					self:visible(PREFSMAN:GetPreference('EditorShowSongTitle') and 0 or 1)
+				else
+					self:hidden(stitch('config').EditorShowSongTitle and 1 or 0)
+				end
+				
+				self:sleep(.1)
+				self:queuecommand('Update')
+				
+			end"><children>
+			<Layer
+				Type="Quad"
+				InitCommand="zoomto,418*0.4,164*0.4;x,94;y,64;diffusealpha,0.4"
+			/>
+			
+			<Layer
+				Type="BitmapText"
+				Font="common normal"
+				InitCommand="x,94;y,64;zoom,0.5;shadowlength,0"
+				Text="Song info hidden"
+			/>
+		</children></Layer>
+		<Layer
+			OnCommand="queuecommand,Set"
+			SetCommand="%function(self)
+				local a = SCREENMAN(4)(1)(2)
+				-- because i dont know how to do it from the above and also fading banner problems
+				a:diffusealpha(1)
+				a:scaletoclipped(418,164)
+				a:zoom(0.4)
+			end"
+		
+		/>
+		
 	</children>
 </ActorFrame>
