@@ -3,7 +3,7 @@
 		
 		<FadingBanner 
 			OnCommand="%function(self)
-				self:LoadFromSong(GAMESTATE:GetCurrentSong()) self:diffusealpha(0) self:x(94) self:y(64) self:queuecommand('Update') end" 
+				self:LoadFromSong(GAMESTATE:GetCurrentSong()) self:diffusealpha(0) self:x(70) self:y(64) self:queuecommand('Update') end" 
 			UpdateCommand="%function(self)
 				if FUCK_EXE then
 					self:visible(PREFSMAN:GetPreference('EditorShowSongTitle') and 1 or 0)
@@ -15,6 +15,7 @@
 				self:queuecommand('Update')
 				
 			end"
+			wakeupMessageCommand="queuecommand,Update"
 		/>
 		<Layer Type="ActorFrame" InitCommand="queuecommand,Update"
 			UpdateCommand="%function(self)
@@ -27,19 +28,41 @@
 				self:sleep(.1)
 				self:queuecommand('Update')
 				
-			end"><children>
+			end"
+			wakeupMessageCommand="queuecommand,Update"><children>
 			<Layer
 				Type="Quad"
-				InitCommand="zoomto,418*0.4,164*0.4;x,94;y,64;diffusealpha,0.4"
+				InitCommand="xywh,70,64,418*0.3,164*0.3;diffusealpha,0.4"
 			/>
 			
 			<Layer
 				Type="BitmapText"
 				Font="common normal"
-				InitCommand="x,94;y,64;zoom,0.5;shadowlength,0"
+				InitCommand="xy,70,64;zoom,0.4;shadowlength,0"
 				Text="Song info hidden"
 			/>
 		</children></Layer>
+		<Layer
+			Type="BitmapText"
+			Font="_inconsolata small"
+			InitCommand="xy,12,100;zoom,0.5;shadowlength,0;horizalign,left"
+			OnCommand="queuecommand,Update"
+			wakeupMessageCommand="queuecommand,Update"
+			UpdateCommand="%function(self)
+				local a = GAMESTATE:GetCurrentSteps(0)
+				if a == nil then
+					self:settext('')
+				else
+					local b = a:GetRadarValues()
+					self:settext(DifficultyToThemedString(a:GetDifficulty())..' '..a:GetMeter())
+					self:cmd('diffuse,'..DifficultyColor(a:GetDifficulty()))
+				end
+				-- can i gsub info more and put it where info is
+			self:sleep(.1)
+			self:queuecommand('Update')
+			end"
+			
+		/>
 		<Layer
 			OnCommand="queuecommand,Set"
 			SetCommand="%function(self)
@@ -47,7 +70,7 @@
 				-- because i dont know how to do it from the above and also fading banner problems
 				a:diffusealpha(1)
 				a:scaletoclipped(418,164)
-				a:zoom(0.4)
+				a:zoom(0.3)
 			end"
 		
 		/>
