@@ -74,7 +74,18 @@
 			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
 		/>
 	</children></Layer>
-
+	
+	<!-- code to get number of songs (i guess) -->
+	<Layer
+		OffCommand="%function()
+			if GAMESTATE:IsCourseMode() then
+				local a = SCREENMAN:GetTopScreen():GetChild('NumSongs'):GetText()
+				Theme_CourseStages = a
+			else
+				Theme_CourseStages = 1
+			end
+		end"
+	/>
 	<!-- quads underlay -->
 	
 	<!-- vertical (there is more in the overlay for wider screen) -->

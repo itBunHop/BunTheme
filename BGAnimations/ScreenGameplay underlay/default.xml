@@ -33,8 +33,8 @@
 	<!-- bpm is awes but not bpmdisplay (that one is not cool) -->
 	<Layer
 		Type="BitmapText"
-		Font="_geo numbers 1x12 (doubleres)"
-		InitCommand="x,SCREEN_WIDTH*0.5;y,54;zoom,0.45;shadowlength,0"
+		Font="_geo"
+		InitCommand="x,SCREEN_WIDTH*0.5;y,52;zoom,0.45;shadowlength,0"
 		OnCommand="queuecommand,Update"
 		UpdateCommand="%function(self)
 			local b = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
