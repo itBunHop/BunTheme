@@ -4,7 +4,7 @@ function offsetMS(pref, low, high,step)
 	local val = PREFSMAN:GetPreference(pref)
 	local ms = (val * 1000)	-- convert seconds to milliseconds
 	local st = step or 1
-	ms = string.format('%i',round2(ms,0))
+	ms = string.format('%i',ThemeHelpers.round2(ms,0))
 
 
 	-- If the player has a value set outside of the specified range
@@ -14,7 +14,7 @@ function offsetMS(pref, low, high,step)
 
 	-- _values as a temp table of values * 1000 as an intermediate step, not presented to players
 	--  choices as millisecond integers with "ms" appended, presented to players
-	local _values  = ThemeRange(low, high,st)
+	local _values  = ThemeHelpers.range(low, high,st)
 	local choices  = {}
 	for i=1,#_values do
 		table.insert(choices,tostring(_values[i])..'ms')

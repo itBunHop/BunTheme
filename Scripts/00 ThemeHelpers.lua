@@ -1,3 +1,7 @@
+-- put everything in a global so i dont pollute the earth and also retroactively fix everything else
+ThemeHelpers = {}
+
+-- this is a real function put in by the default theme i think so i will leave it alone :pensive:
 function DoublesOffset()
 	if GAMESTATE:PlayerUsingBothSides() then
 		if GAMESTATE:IsPlayerEnabled(PLAYER_1) then	return 157.5 end
@@ -7,9 +11,9 @@ function DoublesOffset()
 end
 
 -- i stole it from itg simply love :cries:
-function JudgmentTween(self) self:zoom(0.8) self:decelerate(.1) self:zoom(0.75) self:sleep(.6) self:accelerate(.2) self:zoom(0) end
-function HoldTween(self) self:diffuse(1,1,1,1) self:zoom(.5); self:sleep(.5) self:diffusealpha(0) end
-function DeltaTimeTween(self) self:stoptweening() self:stopeffect() self:diffusealpha(1) self:zoom(1.5) self:decelerate(0.25) self:zoom(1) self:sleep(1) self:diffusealpha(0) end
+ThemeHelpers.JudgmentTween = function(self) self:zoom(0.8) self:decelerate(.1) self:zoom(0.75) self:sleep(.6) self:accelerate(.2) self:zoom(0) end
+ThemeHelpers.HoldTween = function(self) self:diffuse(1,1,1,1) self:zoom(.5); self:sleep(.5) self:diffusealpha(0) end
+ThemeHelpers.DeltaTimeTween = function(self) self:stoptweening() self:stopeffect() self:diffusealpha(1) self:zoom(1.5) self:decelerate(0.25) self:zoom(1) self:sleep(1) self:diffusealpha(0) end
 
 -- thank you sm5 simply love (and also the fallback theme) --
 function WideScale(AR4_3, AR16_9)
@@ -22,7 +26,7 @@ function Clamped_WideScale(AR4_3, AR16_9)
 	-- why
 end
 
-function ThemeRange(start, stop, step)
+ThemeHelpers.range = function(start, stop, step)
 	if start == nil then return end
 
 	if not stop then
@@ -46,6 +50,6 @@ function ThemeRange(start, stop, step)
 	return t
 end
 
-function round2(num, numDP)
+ThemeHelpers.round2 = function(num, numDP)
 	return tonumber(string.format('%.' .. (numDP or 0) .. 'f', num))
 end
