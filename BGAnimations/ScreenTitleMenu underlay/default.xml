@@ -11,8 +11,7 @@
 		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-104;zoom,0.5;shadowlength,0"
 		OnCommand="queuecommand,Set"
 		SetCommand="%function(self)
-			local tpsn = SCREENMAN:GetTopScreen()
-			local life = tpsn:GetChild('LifeDifficulty'):GetText()
+			local life = SCREENMAN('LifeDifficulty'):GetText()
 			local lifenumber = math.floor(string.gsub(life,'life difficulty ',''))
 			
 			self:settext(life)
@@ -31,9 +30,8 @@
 		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-80;zoom,0.5;shadowlength,0"
 		OnCommand="queuecommand,Set"
 		SetCommand="%function(self)
-			local tpsn = SCREENMAN:GetTopScreen()
-			local track = tpsn:GetChild('Songs'):GetText()
-			local vers = tpsn:GetChild('Version'):GetText()
+			local track = SCREENMAN('Songs'):GetText()
+			local vers = SCREENMAN('Version'):GetText()
 			
 			self:settext(track..'\n'..vers)
 		

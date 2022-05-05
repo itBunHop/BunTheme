@@ -93,35 +93,25 @@
 				a:maxwidth(ThemeHelpers.Clamped_WideScale(550,580*1.333333))
 				a:shadowlength(0)
 				a:hidden(0)
-			end"
-		/>
-		
-		<Layer
-			OnCommand="queuecommand,Move"
-			MoveCommand="%function()
-				local a = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
 				
-				a:x(math.max(50+4,SCREEN_CENTER_X-426.6666665+50+4))
-				a:y(SCREEN_CENTER_Y-70+18)
-				a:zoom(0.65)
-				a:horizalign('left')
-				a:shadowlength(0)
-				a:hidden(0)
-			end"
-		/>
-		
-		<Layer
-			OnCommand="queuecommand,Move"
-			MoveCommand="%function()
-				local a = SCREENMAN:GetTopScreen():GetChild('TotalTime')
+				local b = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
 				
-				a:x(math.max(50+164,SCREEN_CENTER_X-426.6666665+50+164))
-				a:addx(ThemeHelpers.Clamped_WideScale(0,40))
-				a:y(SCREEN_CENTER_Y-70+18)
-				a:zoom(0.65)
-				a:horizalign('left')
-				a:shadowlength(0)
-				a:hidden(0)
+				b:x(math.max(50+4,SCREEN_CENTER_X-426.6666665+50+4))
+				b:y(SCREEN_CENTER_Y-70+18)
+				b:zoom(0.65)
+				b:horizalign('left')
+				b:shadowlength(0)
+				b:hidden(0)
+				
+				local c = SCREENMAN:GetTopScreen():GetChild('TotalTime')
+				
+				c:x(math.max(50+164,SCREEN_CENTER_X-426.6666665+50+164))
+				c:addx(ThemeHelpers.Clamped_WideScale(0,40))
+				c:y(SCREEN_CENTER_Y-70+18)
+				c:zoom(0.65)
+				c:horizalign('left')
+				c:shadowlength(0)
+				c:hidden(0)
 			end"
 		/>
 	</children></Layer>
@@ -139,7 +129,12 @@
 			self:settext(gcs:GetGroupName())
 		else
 			if GAMESTATE:IsCourseMode() then
-				self:settext('Marathon Mode')
+				-- theres a thing idk
+				if GAMESTATE:GetPlayMode() == 2 then
+					self:settext('Survival Mode')
+				elseif GAMESTATE:GetPlayMode() == 1 then
+					self:settext('Marathon Mode')
+				end
 			else
 				self:settext('')
 			end

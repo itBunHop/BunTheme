@@ -1,9 +1,14 @@
 <ActorFrame> <children>
 	<Layer
 		Type="BitmapText"
-		Font="common normal"
+		Font="_nunito Bold"
 		Text="marathon"
-		InitCommand="zoom,1"
+		InitCommand="zoom,0.8"
+		GainFocusCommand="diffuse,#88FF88;zoom,1"
+		LoseFocusCommand="diffuse,#FFFFFF;zoom,0.8"
+		EnabledCommand="stopeffect"
+		DisabledCommand="diffuse,#707070"
+		OffCommand="accelerate,0.5;diffusealpha,0"
 	
 	/>
 </children> </ActorFrame>

@@ -2,7 +2,7 @@
 	<BitampText
 		Text="what"
 		File="common normal"
-		InitCommand="zoom,0.7;maxwidth,320/0.7"
+		InitCommand="zoom,0.7;maxwidth,600/0.7"
 		GainFocusCommand="hidden,0;finishtweening;cropright,1;linear,0.5;cropright,0"
 		LoseFocusCommand="hidden,1"
 		OffCommand="linear,0.3;diffusealpha,0"

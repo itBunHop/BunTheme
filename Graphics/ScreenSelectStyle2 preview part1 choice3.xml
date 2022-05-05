@@ -1,8 +1,8 @@
 <ActorFrame><children>
 	<BitampText
-		Text="One Player uses all 8 Panels"
-		File="_eurostile normal"
-		InitCommand="zoomtowidth,320;horizalign,left;skewx,-0.21"
+		Text="i am alone::and would like 8 arrows for some reason"
+		File="common normal"
+		InitCommand="zoom,0.7;maxwidth,600/0.7"
 		GainFocusCommand="hidden,0;finishtweening;cropright,1;linear,0.5;cropright,0"
 		LoseFocusCommand="hidden,1"
 		OffCommand="linear,0.3;diffusealpha,0"

@@ -1,11 +1,24 @@
-<ActorFrame>
-	<children>
-		<BitmapText
-			Text="PICK MODIFIERS"
-			File="_eurostile blue glow"
-			InitCommand="%function(self) self:shadowlength(4); self:x(self:GetWidth()/2) self:skewx(-0.16) end"
-			OnCommand="ZoomX,0;ZoomY,6;BounceEnd,.3;Zoom,1"
-			OffCommand="Accelerate,.2;ZoomX,2;ZoomY,0;DiffuseAlpha,0"
-		/>
-	</children>
-</ActorFrame>
+<ActorFrame><children>
+	<BitmapText
+		Text="set up your mods"
+		File="_nunito Bold"
+		InitCommand="xy,8,12;shadowlength,0;zoom,0.6;horizalign,left"
+	/>
+	
+	<BitmapText
+		Font="_nunito Bold"
+		InitCommand="%function(self)
+			self:x(SCREEN_WIDTH*0.5)
+			self:y(SCREEN_CENTER_Y-180)
+			self:shadowlength(0)
+			self:zoom(0.5)
+			self:maxwidth((SCREEN_WIDTH-20)/0.5)
+			if GAMESTATE:IsCourseMode() then
+				self:hidden(1)
+			else
+				self:settext(GAMESTATE:GetCurrentSong():GetTranslitMainTitle()..'\n'..GAMESTATE:GetCurrentSong():GetTranslitArtist())
+			end
+		end"
+	/>
+
+</children></ActorFrame>

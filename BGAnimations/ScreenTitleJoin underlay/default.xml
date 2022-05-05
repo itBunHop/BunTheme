@@ -1,0 +1,19 @@
+﻿<ActorFrame><children>
+	<Layer
+		Type="AutoActor"
+		File="../ScreenTitleMenu underlay"
+	/>
+	
+	<Layer
+		Type="BitmapText"
+		Font="_nunito Bold small"
+		Text=""
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y+70;zoom,0.5;shadowlength,0"
+		OnCommand="%function(self)
+			self:diffuse(1,0.7,0.7,1)
+			
+			self:settext('oh no! the coinmode is not set to \'home\' and also the game is not in event mode :(\nhold f3+1 so that it does say home\nand then press esc if this message doesnt disappear\n\nthen navigate to the options to turn on event mode')
+		end"
+	/>
+
+</children></ActorFrame>
