@@ -24,7 +24,7 @@
 			Font="_nunito"
 			Text="???"
 			InitCommand="x,4;zoom,0.375;shadowlength,0;horizalign,left" 
-			OnCommand="%function(self) self:maxwidth(Clamped_WideScale(730,750*1.333333)) end"
+			OnCommand="%function(self) self:maxwidth(ThemeHelpers.Clamped_WideScale(730,750*1.333333)) end"
 			SetCommand="%function(self)
 				local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
 				if steps then
@@ -59,7 +59,7 @@
 			Font="_nunito"
 			Text="???" 
 			InitCommand="x,4;zoom,0.375;shadowlength,0;horizalign,left"
-			OnCommand="%function(self) self:maxwidth(Clamped_WideScale(730,750*1.333333)) end"
+			OnCommand="%function(self) self:maxwidth(ThemeHelpers.Clamped_WideScale(730,750*1.333333)) end"
 			SetCommand="%function(self)
 				local steps = GAMESTATE:GetCurrentSteps(PLAYER_2)
 				if steps then

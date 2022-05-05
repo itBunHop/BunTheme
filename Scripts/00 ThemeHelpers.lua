@@ -16,11 +16,11 @@ ThemeHelpers.HoldTween = function(self) self:diffuse(1,1,1,1) self:zoom(.5); sel
 ThemeHelpers.DeltaTimeTween = function(self) self:stoptweening() self:stopeffect() self:diffusealpha(1) self:zoom(1.5) self:decelerate(0.25) self:zoom(1) self:sleep(1) self:diffusealpha(0) end
 
 -- thank you sm5 simply love (and also the fallback theme) --
-function WideScale(AR4_3, AR16_9)
+ThemeHelpers.WideScale = function(AR4_3, AR16_9)
 	return scale( SCREEN_WIDTH, 640, 853.333333, AR4_3, AR16_9 )
 end
 
-function Clamped_WideScale(AR4_3, AR16_9)
+ThemeHelpers.Clamped_WideScale = function(AR4_3, AR16_9)
 	local a = clamp(scale( SCREEN_WIDTH, 640, 853.333333, AR4_3, AR16_9 ),AR4_3,AR16_9)
 	if a == AR4_3 and SCREEN_WIDTH ~= 640 then return AR16_9 else return a end
 	-- why

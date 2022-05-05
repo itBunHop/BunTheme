@@ -3,14 +3,14 @@
 		<Layer
 			Type="Quad"
 			InitCommand="stretchto,0,-10,0,10;diffuse,#000000AA"
-			OnCommand="%function(self) self:zoomx(WideScale(300,400)) end"
+			OnCommand="%function(self) self:zoomx(ThemeHelpers.WideScale(300,400)) end"
 		/>
 		<Layer
 			Type="SongMeterDisplay"
 			StreamWidth="300"
 			StreamPath="meter stream"
 			InitCommand="zoomy,20;diffuse,#00FFFF88"
-			OnCommand="%function(self) self:zoomx(WideScale(1,1.333333)) end"
+			OnCommand="%function(self) self:zoomx(ThemeHelpers.WideScale(1,1.333333)) end"
 		>
 			<Tip
 				File="tip"
@@ -21,13 +21,13 @@
 		<Layer
 			Type="BitmapText"
 			Font="_nunito Bold"
-			OnCommand="%function(self) self:y(-1) self:zoom(.4) self:shadowlength(0) self:maxwidth(WideScale(296,396)/0.4) end"
+			OnCommand="%function(self) self:y(-1) self:zoom(.4) self:shadowlength(0) self:maxwidth(ThemeHelpers.WideScale(296,396)/0.4) end"
 			InitCommand="playcommand,Update"
 			CurrentSongChangedMessageCommand="playcommand,Update"
 			UpdateCommand="%SetFromSongTitleAndCourseTitle"
 		/>
 		<!-- its 296 - 396 because image stretching is not great -->.
-		<Layer File="meter frame" InitCommand="%function(self) self:zoomx(WideScale(1,1.333333)) end"/>
+		<Layer File="meter frame" InitCommand="%function(self) self:zoomx(ThemeHelpers.WideScale(1,1.333333)) end"/>
 	</children> </Layer>
 	
 	<!-- bpm is awes but not bpmdisplay (that one is not cool) -->

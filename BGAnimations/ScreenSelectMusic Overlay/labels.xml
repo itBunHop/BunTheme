@@ -13,6 +13,6 @@
 		Font="_nunito Bold small"
 		Text="Mines::Rolls::Hands"
 		InitCommand="zoom,0.55;shadowlength,0;horizalign,left;x,148;y,25"
-		OnCommand="%function(self) self:addx(Clamped_WideScale(0,24)) end"
+		OnCommand="%function(self) self:addx(ThemeHelpers.Clamped_WideScale(0,24)) end"
 	/>
 </children></ActorFrame>

@@ -77,7 +77,7 @@
 			Font="_nunito Bold"
 			Text="Length:"
 			InitCommand="x,160;y,18;shadowlength,0;zoom,0.45;diffuse,#BBBBBB;horizalign,right"
-			OnCommand="%function(self) self:addx(Clamped_WideScale(0,40)) end"
+			OnCommand="%function(self) self:addx(ThemeHelpers.Clamped_WideScale(0,40)) end"
 		/>
 		
 		<!-- infos (i am queueing to move a topscreen child because it doesnt exist on oncommand) -->
@@ -90,7 +90,7 @@
 				a:y(SCREEN_CENTER_Y-70)
 				a:zoom(0.45)
 				a:horizalign('left')
-				a:maxwidth(Clamped_WideScale(550,580*1.333333))
+				a:maxwidth(ThemeHelpers.Clamped_WideScale(550,580*1.333333))
 				a:shadowlength(0)
 				a:hidden(0)
 			end"
@@ -116,7 +116,7 @@
 				local a = SCREENMAN:GetTopScreen():GetChild('TotalTime')
 				
 				a:x(math.max(50+164,SCREEN_CENTER_X-426.6666665+50+164))
-				a:addx(Clamped_WideScale(0,40))
+				a:addx(ThemeHelpers.Clamped_WideScale(0,40))
 				a:y(SCREEN_CENTER_Y-70+18)
 				a:zoom(0.65)
 				a:horizalign('left')
@@ -132,7 +132,7 @@
 		Font="_nunito Bold"
 		Text="group name"
 		InitCommand="x,SCREEN_CENTER_X-160-6;y,SCREEN_CENTER_Y-222;shadowlength,0;zoom,0.6;diffuse,#FFFFFF;maxwidth,500"
-		OnCommand="%function(self) self:x(math.max(SCREEN_WIDTH*0.25-6,SCREEN_CENTER_X-213.33333325-6)) self:maxwidth(Clamped_WideScale(500,500*1.333333)) end"
+		OnCommand="%function(self) self:x(math.max(SCREEN_WIDTH*0.25-6,SCREEN_CENTER_X-213.33333325-6)) self:maxwidth(ThemeHelpers.Clamped_WideScale(500,500*1.333333)) end"
 		SetCommand="%function(self)
 		local gcs = GAMESTATE:GetCurrentSong()
 		if gcs then
