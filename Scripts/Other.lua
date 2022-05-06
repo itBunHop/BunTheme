@@ -179,7 +179,7 @@ function SetFromSongTitleAndCourseTitle( actor )
 		text = song:GetDisplayFullTitle()
 	end
 	if course then
-		text = course:GetDisplayFullTitle() .. " [".. (CourseSongIndex()+1) .."/"..Theme_CourseStages.."] - " .. text;
+		text = course:GetDisplayFullTitle() .. " [".. (CourseSongIndex()+1) .."/"..ThemeHelpers.CourseStages.."] - " .. text;
 	end
 
 	actor:settext( text )

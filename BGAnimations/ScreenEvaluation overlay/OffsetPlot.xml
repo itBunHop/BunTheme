@@ -232,7 +232,7 @@ end"><children>
 				self:x(70 + 12)
 				self:y(-88)
 				self:zoomto(135,60)
-				self:hidden(0)
+				self:hidden(1)
 			else
 				self:x(0)
 				self:y(-88)
@@ -644,7 +644,7 @@ end"><children>
 		end"
 		OnCommand="%function(self)
 			self:hidden(1)
-			self:xy(83,-88)
+			self:xy(-83,-88)
 			self:zoom(.8)
 			self:shadowlength(0)
 			
@@ -773,7 +773,7 @@ end"><children>
 				self:x(-70 - 12)
 				self:y(-88)
 				self:zoomto(135,60)
-				self:hidden(0)
+				self:hidden(1)
 			else
 				self:x(0)
 				self:y(-88)

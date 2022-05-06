@@ -74,9 +74,15 @@
 			Font="_nunito Bold small"
 			InitCommand="shadowlength,0;x,4;y,-14;zoom,0.6;horizalign,left;maxwidth,500;queuecommand,Set"
 			SetCommand="%function(self)
-				local a = GAMESTATE:GetCurrentSteps(0)
-				local b = a:GetRadarValues()
-				self:settext(DifficultyToThemedString(a:GetDifficulty())..' '..a:GetMeter())
+				if not GAMESTATE:IsCourseMode() then
+					local a = GAMESTATE:GetCurrentSteps(0)
+					local b = a:GetRadarValues()
+					self:settext(DifficultyToThemedString(a:GetDifficulty())..' '..a:GetMeter())
+				else
+					local a = SCREENMAN('DifficultyMeterP1')
+					
+					self:settext(a(1):GetText()..' '..a(2):GetText())
+				end
 			end"
 		/>
 		
@@ -85,8 +91,12 @@
 			Font="_nunito small"
 			InitCommand="shadowlength,0;x,4;y,2;zoom,0.5;horizalign,left;maxwidth,600;queuecommand,Set"
 			SetCommand="%function(self)
-				local steps = GAMESTATE:GetCurrentSteps(0)
-				self:settext(steps:GetDescription())
+				if not GAMESTATE:IsCourseMode() then
+					local steps = GAMESTATE:GetCurrentSteps(0)
+					self:settext(steps:GetDescription())
+				else
+					self:settext(ThemeHelpers.CourseStages..' file(s)')
+				end
 			end"
 		/>
 	</children></Layer>
@@ -167,9 +177,15 @@
 			Font="_nunito Bold small"
 			InitCommand="shadowlength,0;x,4;y,-14;zoom,0.6;horizalign,left;maxwidth,500;queuecommand,Set"
 			SetCommand="%function(self)
-				local a = GAMESTATE:GetCurrentSteps(1)
-				local b = a:GetRadarValues()
-				self:settext(DifficultyToThemedString(a:GetDifficulty())..' '..a:GetMeter())
+				if not GAMESTATE:IsCourseMode() then
+					local a = GAMESTATE:GetCurrentSteps(0)
+					local b = a:GetRadarValues()
+					self:settext(DifficultyToThemedString(a:GetDifficulty())..' '..a:GetMeter())
+				else
+					local a = SCREENMAN('DifficultyMeterP2')
+					
+					self:settext(a(1):GetText()..' '..a(2):GetText())
+				end
 			end"
 		/>
 		
@@ -178,8 +194,12 @@
 			Font="_nunito small"
 			InitCommand="shadowlength,0;x,4;y,2;zoom,0.5;horizalign,left;maxwidth,600;queuecommand,Set"
 			SetCommand="%function(self)
-				local steps = GAMESTATE:GetCurrentSteps(1)
-				self:settext(steps:GetDescription())
+				if not GAMESTATE:IsCourseMode() then
+					local steps = GAMESTATE:GetCurrentSteps(1)
+					self:settext(steps:GetDescription())
+				else
+					self:settext(ThemeHelpers.CourseStages..' file(s)')
+				end
 			end"
 		/>
 	</children></Layer>

@@ -17,6 +17,7 @@
 		local coursemode = GAMESTATE:IsCourseMode()
 		local native = PREFSMAN:GetPreference('ShowNativeLanguage')
 		if coursemode then
+			self:addy(7)
 			local a = GAMESTATE:GetCurrentCourse()
 			if native then
 				self:settext(a:GetDisplayFullTitle())
@@ -54,7 +55,8 @@
 	/>
 	
 	<!-- your epic things here -->
-	<Layer File="OffsetPlot" InitCommand="y,14"/>
+	<!-- would like a rewrite of the offsetplot -->
+	<Layer File="OffsetPlot" InitCommand="y,24"/>
 		
 	</children>
 </ActorFrame>

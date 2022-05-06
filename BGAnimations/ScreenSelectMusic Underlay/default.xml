@@ -5,7 +5,7 @@
 		InitCommand="stretchto,SCREEN_CENTER_X-320,0,SCREEN_CENTER_X+320,SCREEN_HEIGHT;diffuse,#000000;diffusealpha,0.5"
 	/>
 	
-		<!-- p1 things -->
+	<!-- p1 things -->
 	
 	<!-- description -->
 	<Layer
@@ -26,17 +26,28 @@
 			InitCommand="x,4;zoom,0.375;shadowlength,0;horizalign,left" 
 			OnCommand="%function(self) self:maxwidth(ThemeHelpers.Clamped_WideScale(730,750*1.333333)) end"
 			SetCommand="%function(self)
-				local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
-				if steps then
-					self:settext(steps:GetDescription())	
+				if not GAMESTATE:IsCourseMode() then
+					local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
+					if steps then
+						self:settext(steps:GetDescription())	
+					else
+						self:settext('')
+					end
+					
 				else
-					self:settext('')
+					local diff = GAMESTATE:GetCurrentTrail(PLAYER_1)
+					if diff then
+						self:settext(CourseDifficultyToThemedString(diff:GetDifficulty()))
+					else
+						self:settext('')
+					end
 				end
 				
-				self:diffuse(1,1,1,1) 
+				self:diffuse(1,1,1,1)
 			end" 
 			CurrentSongChangedMessageCommand="playcommand,Set" 
 			CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+			CurrentTrailP1ChangedMessageCommand="playcommand,Set"
 		/>
 	</children></Layer>
 	
@@ -61,17 +72,28 @@
 			InitCommand="x,4;zoom,0.375;shadowlength,0;horizalign,left"
 			OnCommand="%function(self) self:maxwidth(ThemeHelpers.Clamped_WideScale(730,750*1.333333)) end"
 			SetCommand="%function(self)
-				local steps = GAMESTATE:GetCurrentSteps(PLAYER_2)
-				if steps then
-					self:settext(steps:GetDescription())	
+				if not GAMESTATE:IsCourseMode() then
+					local steps = GAMESTATE:GetCurrentSteps(PLAYER_2)
+					if steps then
+						self:settext(steps:GetDescription())	
+					else
+						self:settext('')
+					end
+					
 				else
-					self:settext('')
+					local diff = GAMESTATE:GetCurrentTrail(PLAYER_2)
+					if diff then
+						self:settext(CourseDifficultyToThemedString(diff:GetDifficulty()))
+					else
+						self:settext('')
+					end
 				end
 				
-				self:diffuse(1,1,1,1) 
+				self:diffuse(1,1,1,1)
 			end" 
 			CurrentSongChangedMessageCommand="playcommand,Set" 
 			CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
+			CurrentTrailP2ChangedMessageCommand="playcommand,Set"
 		/>
 	</children></Layer>
 	
@@ -80,9 +102,9 @@
 		OffCommand="%function()
 			if GAMESTATE:IsCourseMode() then
 				local a = SCREENMAN:GetTopScreen():GetChild('NumSongs'):GetText()
-				Theme_CourseStages = a
+				ThemeHelpers.CourseStages = a
 			else
-				Theme_CourseStages = 1
+				ThemeHelpers.CourseStages = 1
 			end
 		end"
 	/>
