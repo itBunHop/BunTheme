@@ -53,10 +53,17 @@
 		<!-- p1 score -->
 		<Layer
 			Type="BitmapText"
-			Font="_inconsolata"
-			InitCommand="shadowlength,0;x,290;y,40;zoom,0.7;horizalign,right"
+			Font="_geo"
+			InitCommand="shadowlength,0;x,300;y,44;zoom,0.4;horizalign,right"
 			OnCommand="queuecommand,Set"
-			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PercentP1'):GetChild('PercentP1'):GetText()) end"
+			SetCommand="%function(self)
+				local a = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+				local possible = a:GetPossibleDancePoints()
+				local actual = a:GetActualDancePoints()
+				
+				self:settext(FormatPercentScore(actual/possible))
+				-- because the percent text doesnt actually go well if it goes over 100 and you add more
+			end"
 		/>
 		
 		<!-- p1 mods -->
@@ -156,10 +163,16 @@
 		<!-- p2 score -->
 		<Layer
 			Type="BitmapText"
-			Font="_inconsolata"
-			InitCommand="shadowlength,0;x,290;y,40;zoom,0.7;horizalign,right"
+			Font="_geo"
+			InitCommand="shadowlength,0;x,300;y,44;zoom,0.4;horizalign,right"
 			OnCommand="queuecommand,Set"
-			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PercentP2'):GetChild('PercentP2'):GetText()) end"
+			SetCommand="%function(self)
+				local a = STATSMAN:GetCurStageStats():GetPlayerStageStats(1)
+				local possible = a:GetPossibleDancePoints()
+				local actual = a:GetActualDancePoints()
+				
+				self:settext(FormatPercentScore(actual/possible))
+			end"
 		/>
 		
 		<!-- p2 mods -->
