@@ -1,6 +1,6 @@
 function PlayerColor( pn )
-	if pn == PLAYER_1 then return "#5078FF" end	-- blue
-	if pn == PLAYER_2 then return "#FF5078" end	-- pink that is kind of red
+	if pn == PLAYER_1 then return "#7896FF" end	-- blue
+	if pn == PLAYER_2 then return "#FF7896" end	-- pink that is kind of red
 	return "1,1,1,1"
 end
 
@@ -10,7 +10,7 @@ function DifficultyColor( dc )
 	if dc == DIFFICULTY_MEDIUM		then return "#F0F064" end
 	if dc == DIFFICULTY_HARD		then return "#FF5050" end
 	if dc == DIFFICULTY_CHALLENGE	then return "#FA78D2" end
-	if dc == DIFFICULTY_EDIT		then return "#F0F0F0" end
+	if dc == DIFFICULTY_EDIT		then return "#D2D2D2" end
 	return "1,1,1,1"
 end
 

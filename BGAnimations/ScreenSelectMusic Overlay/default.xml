@@ -56,7 +56,7 @@
 	<!-- the song info -->
 	<Layer Type="ActorFrame" 
 		InitCommand="x,SCREEN_CENTER_X-270;y,SCREEN_CENTER_Y-70"
-		OnCommand="%function(self) self:x(math.max(50,SCREEN_CENTER_X-426.6666665+50)) end"><children>
+		OnCommand="%function(self) self:x(math.max(50,SCREEN_CENTER_X-426.666667+50)) end"><children>
 		<!-- labels -->
 		<Layer
 			Type="BitmapText"
@@ -86,7 +86,7 @@
 			MoveCommand="%function()
 				local a = SCREENMAN:GetTopScreen():GetChild('ArtistDisplay')
 				
-				a:x(math.max(50+4,SCREEN_CENTER_X-426.6666665+50+4))
+				a:x(math.max(50+4,SCREEN_CENTER_X-426.666667+50+4))
 				a:y(SCREEN_CENTER_Y-70)
 				a:zoom(0.45)
 				a:horizalign('left')
@@ -96,7 +96,7 @@
 				
 				local b = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
 				
-				b:x(math.max(50+4,SCREEN_CENTER_X-426.6666665+50+4))
+				b:x(math.max(50+4,SCREEN_CENTER_X-426.666667+50+4))
 				b:y(SCREEN_CENTER_Y-70+18)
 				b:zoom(0.65)
 				b:horizalign('left')
@@ -105,7 +105,7 @@
 				
 				local c = SCREENMAN:GetTopScreen():GetChild('TotalTime')
 				
-				c:x(math.max(50+164,SCREEN_CENTER_X-426.6666665+50+164))
+				c:x(math.max(50+164,SCREEN_CENTER_X-426.666667+50+164))
 				c:addx(ThemeHelpers.Clamped_WideScale(0,40))
 				c:y(SCREEN_CENTER_Y-70+18)
 				c:zoom(0.65)
@@ -145,8 +145,8 @@
 	/>
 	
 	<!-- labels for players (it is here because overlay is above the panedisplay, which i use and it makes me sad) -->
-	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" InitCommand="y,SCREEN_CENTER_Y+67+10;diffuse,#000000C8" />
-	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" InitCommand="y,SCREEN_CENTER_Y+67+10+69;diffuse,#000000C8" />
+	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" InitCommand="%function(self) self:x(math.max(0,SCREEN_CENTER_X-426.666667)) self:y(SCREEN_CENTER_Y+67+10) self:diffuse(0,0,0,200/255) end" />
+	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" InitCommand="%function(self) self:x(math.max(0,SCREEN_CENTER_X-426.666667)) self:y(SCREEN_CENTER_Y+67+10+69) self:diffuse(0,0,0,200/255) end" />
 	
 	<!-- quad overlay -->
 	<Layer

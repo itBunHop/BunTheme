@@ -54,14 +54,16 @@
 		<Layer
 			Type="BitmapText"
 			Font="_geo"
-			InitCommand="shadowlength,0;x,300;y,44;zoom,0.4;horizalign,right"
+			InitCommand="shadowlength,0;x,280;y,44;zoom,0.4;horizalign,right"
 			OnCommand="queuecommand,Set"
 			SetCommand="%function(self)
 				local a = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
 				local possible = a:GetPossibleDancePoints()
 				local actual = a:GetActualDancePoints()
 				
-				self:settext(FormatPercentScore(actual/possible))
+				local score = actual/possible
+				if score < 0 then score = 0 end
+				self:settext(FormatPercentScore(score))
 				-- because the percent text doesnt actually go well if it goes over 100 and you add more
 			end"
 		/>
@@ -164,14 +166,16 @@
 		<Layer
 			Type="BitmapText"
 			Font="_geo"
-			InitCommand="shadowlength,0;x,300;y,44;zoom,0.4;horizalign,right"
+			InitCommand="shadowlength,0;x,280;y,44;zoom,0.4;horizalign,right"
 			OnCommand="queuecommand,Set"
 			SetCommand="%function(self)
 				local a = STATSMAN:GetCurStageStats():GetPlayerStageStats(1)
 				local possible = a:GetPossibleDancePoints()
 				local actual = a:GetActualDancePoints()
 				
-				self:settext(FormatPercentScore(actual/possible))
+				local score = actual/possible
+				if score < 0 then score = 0 end
+				self:settext(FormatPercentScore(score))
 			end"
 		/>
 		
