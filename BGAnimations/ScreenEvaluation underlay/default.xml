@@ -7,24 +7,24 @@
 		
 		<!-- label -->
 		<Layer Type="ActorFrame" UpdateSpellDisplayP1MessageCommand="%function(self) local pn = 1 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" InitCommand="x,100;y,20"><children>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Fantastic" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*0" OnCommand="@'diffuse,'..JudgmentColor(1)"/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Excellent" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*1" OnCommand="@'diffuse,'..JudgmentColor(2)"/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Great" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*2" OnCommand="@'diffuse,'..JudgmentColor(3)"/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Decent" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*3" OnCommand="@'diffuse,'..JudgmentColor(4)"/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Way Off" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*4" OnCommand="@'diffuse,'..JudgmentColor(5)"/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Miss" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*5" OnCommand="@'diffuse,'..JudgmentColor(6)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Fantastic" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*0" OnCommand="@'diffuse,'..JudgmentColorLight(1)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Excellent" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*1" OnCommand="@'diffuse,'..JudgmentColorLight(2)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Great" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*2" OnCommand="@'diffuse,'..JudgmentColorLight(3)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Decent" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*3" OnCommand="@'diffuse,'..JudgmentColorLight(4)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Way Off" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*4" OnCommand="@'diffuse,'..JudgmentColorLight(5)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Miss" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*5" OnCommand="@'diffuse,'..JudgmentColorLight(6)"/>
 			<Layer Type="BitmapText" Font="common normal" Text="Mines" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*6" />
 			<Layer Type="BitmapText" Font="common normal" Text="Holds" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*7" />
 			<Layer Type="BitmapText" Font="common normal" Text="Rolls" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*8" />
 		</children></Layer>
 		<!-- real stats -->
 		<Layer Type="ActorFrame" InitCommand="x,110;y,20" UpdateSpellDisplayP1MessageCommand="%function(self) local pn = 1 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" Name="StatsP1"><children>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*0" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(1)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(8)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*1" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(2)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(7)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*2" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(3)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(6)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*3" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(4)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(5)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*4" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(5)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(4)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*5" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(6)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(3)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*0" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(1)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(8)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*1" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(2)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(7)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*2" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(3)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(6)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*3" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(4)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(5)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*4" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(5)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(4)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*5" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(6)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(3)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*6" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(1)) end" />
 			<Layer Type="BitmapText" 
 				Font="_nunito Bold small" 
@@ -118,24 +118,24 @@
 		
 		<!-- label -->
 		<Layer Type="ActorFrame" UpdateSpellDisplayP2MessageCommand="%function(self) local pn = 2 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" InitCommand="x,100;y,20"><children>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Fantastic" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*0" OnCommand="@'diffuse,'..JudgmentColor(1)"/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Excellent" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*1" OnCommand="@'diffuse,'..JudgmentColor(2)"/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Great" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*2" OnCommand="@'diffuse,'..JudgmentColor(3)"/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Decent" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*3" OnCommand="@'diffuse,'..JudgmentColor(4)"/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Way Off" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*4" OnCommand="@'diffuse,'..JudgmentColor(5)"/>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Miss" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*5" OnCommand="@'diffuse,'..JudgmentColor(6)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Fantastic" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*0" OnCommand="@'diffuse,'..JudgmentColorLight(1)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Excellent" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*1" OnCommand="@'diffuse,'..JudgmentColorLight(2)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Great" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*2" OnCommand="@'diffuse,'..JudgmentColorLight(3)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Decent" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*3" OnCommand="@'diffuse,'..JudgmentColorLight(4)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Way Off" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*4" OnCommand="@'diffuse,'..JudgmentColorLight(5)"/>
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Miss" 		InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*5" OnCommand="@'diffuse,'..JudgmentColorLight(6)"/>
 			<Layer Type="BitmapText" Font="common normal" Text="Mines" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*6" />
 			<Layer Type="BitmapText" Font="common normal" Text="Holds" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*7" />
 			<Layer Type="BitmapText" Font="common normal" Text="Rolls" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.7;y,20*8" />
 		</children></Layer>
 		<!-- real stats -->
 		<Layer Type="ActorFrame" InitCommand="x,110;y,20" UpdateSpellDisplayP2MessageCommand="%function(self) local pn = 2 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" Name="statsP2"><children>
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*0" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(1)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(8)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*1" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(2)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(7)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*2" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(3)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(6)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*3" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(4)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(5)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*4" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(5)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(4)) end" />
-			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*5" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColor(6)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(3)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*0" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(1)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(8)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*1" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(2)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(7)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*2" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(3)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(6)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*3" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(4)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(5)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*4" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(5)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(4)) end" />
+			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*5" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(6)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(3)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;y,20*6" OnCommand="%function(self) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(1)) end" />
 			
 			<Layer Type="BitmapText" 
