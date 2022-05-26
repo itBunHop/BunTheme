@@ -3,7 +3,7 @@
 		
 		<FadingBanner 
 			OnCommand="%function(self)
-				self:LoadFromSong(GAMESTATE:GetCurrentSong()) self:diffusealpha(0) self:x(70) self:y(64) self:queuecommand('Update') end" 
+				self:LoadFromSong(GAMESTATE:GetCurrentSong()) self:diffusealpha(0) self:xy(70,64) self:queuecommand('Update') end" 
 			UpdateCommand="%function(self)
 				if FUCK_EXE then
 					self:visible(PREFSMAN:GetPreference('EditorShowSongTitle') and 1 or 0)
@@ -44,7 +44,7 @@
 		</children></Layer>
 		<Layer
 			Type="BitmapText"
-			Font="_inconsolata small"
+			Font="_nunito Bold small"
 			InitCommand="xy,12,100;zoom,0.5;shadowlength,0;horizalign,left"
 			OnCommand="queuecommand,Update"
 			wakeupMessageCommand="queuecommand,Update"
@@ -73,6 +73,22 @@
 				a:zoom(0.3)
 			end"
 		
+		/>
+		
+		<Layer
+			Type="BitmapText"
+			Font="_nunito small"
+			InitCommand="xy,8,150;zoom,0.4;shadowlength,0;horizalign,left"
+			OnCommand="%function(self)
+			
+			local txt = 'use the esc menu once\n'..
+						'to hide player names\n'..
+						'[F1] help menu'
+			
+			self:settext(txt)
+			
+			end"
+			
 		/>
 		
 	</children>

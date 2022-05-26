@@ -1,6 +1,6 @@
 <ActorFrame> <children>
 	<!-- this looks like simply love-->
-	<Layer Type="Quad" InitCommand="stretchto,0,0,SCREEN_WIDTH,76;diffuse,#000000;diffusealpha,0.6;fadebottom,0.05" />
+	<Layer Type="Quad" InitCommand="stretchto,0,0,SCREEN_WIDTH,76;diffuse,#000000;diffusealpha,0.8;fadebottom,0.05" />
 	<Layer Type="ActorFrame"OnCommand="x,SCREEN_CENTER_X;y,SCREEN_TOP+20"> <children>
 		<Layer
 			Type="Quad"
@@ -36,11 +36,10 @@
 	<Layer
 		Type="BitmapText"
 		Font="_geo"
-		InitCommand="x,SCREEN_WIDTH*0.5;y,52;zoom,0.45;shadowlength,0"
+		InitCommand="x,SCREEN_WIDTH*0.5;y,54;zoom,0.45;shadowlength,0"
 		OnCommand="queuecommand,Update"
 		UpdateCommand="%function(self)
-			local b = SCREENMAN:GetTopScreen():GetChild('BPMDisplay')
-			if b then b = self:settext(b:GetChild('Text'):GetText()) end
+			self:settext(ThemeHelpers.round2(GAMESTATE:GetCurBPM(),3))
 			self:sleep(1/30)
 			self:queuecommand('Update')
 		
@@ -48,8 +47,38 @@
 	/>
 	
 	<!-- Difficulty (soon) -->
-	<Layer Type="ActorFrame" OnCommand="hidden,1" > <children>
-	
+	<Layer Type="ActorFrame" OnCommand="hidden,0" > <children>
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="xy,SCREEN_CENTER_X-((SCREEN_WIDTH*0.25)+150),37" CurrentStepsP1ChangedMessageCommand="playcommand,Update"><children>
+			<Actor
+				Type="BitmapText"
+				Font="_nunito Bold small"
+				InitCommand="zoom,0.5;shadowlength,0;horizalign,left;queuecommand,Update"
+				
+				UpdateCommand="%function(self)
+					local a = GAMESTATE:GetCurrentSteps(0)
+					if a then
+						self:settext(DifficultyToThemedString(a:GetDifficulty())..' '..a:GetMeter())
+						self:cmd('diffuse,'..DifficultyColor(a:GetDifficulty()))
+					end
+				end"
+			/>
+		</children></ActorFrame>
+		
+		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" OnCommand="xy,SCREEN_CENTER_X+((SCREEN_WIDTH*0.25)+150),37" CurrentStepsP2ChangedMessageCommand="playcommand,Update"><children>
+			<Actor
+				Type="BitmapText"
+				Font="_nunito Bold small"
+				InitCommand="zoom,0.5;shadowlength,0;horizalign,right;queuecommand,Update"
+				
+				UpdateCommand="%function(self)
+					local a = GAMESTATE:GetCurrentSteps(1)
+					if a then
+						self:settext(DifficultyToThemedString(a:GetDifficulty())..' '..a:GetMeter())
+						self:cmd('diffuse,'..DifficultyColor(a:GetDifficulty()))
+					end
+				end"
+			/>
+		</children></ActorFrame>
 	</children> </Layer>
 
 	<ActorFrame
