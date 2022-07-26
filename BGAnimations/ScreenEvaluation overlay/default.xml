@@ -54,6 +54,60 @@
 		end"
 	/>
 	
+	<!-- local theme grades (epic) -->
+	
+	<Layer
+		Type="BitmapText"
+		Font="_nunito bold"
+		InitCommand="xy,SCREEN_CENTER_X-230,SCREEN_CENTER_Y-180;shadowlength,0;zoom,1"
+		OnCommand="%function(self)
+			local a = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
+			local possible = a:GetPossibleDancePoints()
+			local actual = a:GetActualDancePoints()
+			local score = (actual/possible)*100
+			
+			local gr = ThemeHelpers.LocalGrades
+			local itggr = a:GetGrade()
+			
+			for i=1,#gr do
+				if score >= gr[i][1] then 
+					if itggr == 20 then
+						self:settext(gr[i][2]..'\n(failed)')
+					else
+						self:settext(gr[i][2])
+					end
+					break 
+				end
+			end
+		end"
+	/>
+	
+	<Layer
+		Type="BitmapText"
+		Font="_nunito bold"
+		InitCommand="xy,SCREEN_CENTER_X+230,SCREEN_CENTER_Y-180;shadowlength,0;zoom,1"
+		OnCommand="%function(self)
+			local a = STATSMAN:GetCurStageStats():GetPlayerStageStats(1)
+			local possible = a:GetPossibleDancePoints()
+			local actual = a:GetActualDancePoints()
+			local score = (actual/possible)*100
+			
+			local gr = ThemeHelpers.LocalGrades
+			local itggr = a:GetGrade()
+			
+			for i=1,#gr do
+				if score >= gr[i][1] then 
+					if itggr == 20 then
+						self:settext(gr[i][2]..'\n(failed)')
+					else
+						self:settext(gr[i][2])
+					end
+					break 
+				end
+			end
+		end"
+	/>
+	
 	<!-- your epic things here -->
 	<!-- would like a rewrite of the offsetplot -->
 	<Layer File="OffsetPlot" InitCommand="y,24"/>

@@ -53,3 +53,20 @@ end
 ThemeHelpers.round2 = function(num, numDP)
 	return tonumber(string.format('%.' .. (numDP or 0) .. 'f', num))
 end
+
+ThemeHelpers.LocalGrades = {
+	--{100.50,'!'},
+	{100.00,'SSS+'},
+	{99.00,'SSS'},
+	{98.00,'SS+'},
+	{96.00,'SS'},
+	{93.00,'S+'},
+	{90.00,'S'},
+	{85.00,'A+'},
+	{80.00,'A'},
+	{75.00,'B+'},
+	{70.00,'B'},
+	{60.00,'C+'},
+	{50.00,'C'},
+	{-9e9,'D'},
+}
