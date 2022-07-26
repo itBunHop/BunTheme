@@ -1,0 +1,11 @@
+<ActorFrame> <children>
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,SCREEN_CENTER_X-426.666667,SCREEN_CENTER_Y-240,SCREEN_CENTER_X+426.666667,SCREEN_CENTER_Y-210;diffuse,#000000"
+	/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="stretchto,SCREEN_CENTER_X-426.666667,SCREEN_CENTER_Y-2,SCREEN_CENTER_X+426.666667,SCREEN_CENTER_Y+2;y,28;diffuse,#FFFFFF"
+	/>
+</children> </ActorFrame>

@@ -117,10 +117,6 @@
 	/>
 	
 	<!-- horizontal -->
-	<Layer
-		Type="Quad"
-		InitCommand="stretchto,SCREEN_CENTER_X-426.666667,SCREEN_CENTER_Y-2,SCREEN_CENTER_X-10,SCREEN_CENTER_Y+2;y,SCREEN_CENTER_Y-204;diffuse,#FFFFFF"
-	/>
 	
 	<Layer
 		Type="Quad"
