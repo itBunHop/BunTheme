@@ -1,0 +1,12 @@
+<ActorFrame> <children>
+
+<Layer
+	Type="BitmapText"
+	Font="common normal"
+	InitCommand="xy,SCREEN_CENTER_X,SCREEN_HEIGHT*0.65;zoom,0.5;shadowlength,0"
+	OnCommand="%function(self)
+		self:settext('this is a sm3.95 screen and it kind of works\nexcept you cant make a profile in notitg and use it without crashing\nloading into an existing profile works')
+	end"
+/>
+</children> </ActorFrame>
+
