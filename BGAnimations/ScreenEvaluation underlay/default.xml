@@ -54,8 +54,7 @@
 		<Layer
 			Type="BitmapText"
 			Font="_geo"
-			UpdateSpellDisplayP1MessageCommand="%function(self) local pn = 1 if oplot_spellCards[curcard[pn]] then self:hidden(1) else self:hidden(0) end end"
-			InitCommand="shadowlength,0;x,280;y,32;zoom,0.5;horizalign,right"
+			InitCommand="shadowlength,0;x,280;y,72;zoom,0.5;horizalign,right"
 			OnCommand="queuecommand,Set"
 			SetCommand="%function(self)
 				local a = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
@@ -167,8 +166,7 @@
 		<Layer
 			Type="BitmapText"
 			Font="_geo"
-			UpdateSpellDisplayP2MessageCommand="%function(self) local pn = 2 if oplot_spellCards[curcard[pn]] then self:hidden(1) else self:hidden(0) end end"
-			InitCommand="shadowlength,0;x,280;y,32;zoom,0.5;horizalign,right"
+			InitCommand="shadowlength,0;x,280;y,72;zoom,0.5;horizalign,right"
 			OnCommand="queuecommand,Set"
 			SetCommand="%function(self)
 				local a = STATSMAN:GetCurStageStats():GetPlayerStageStats(1)
