@@ -1,5 +1,8 @@
-<ActorFrame>
-	<children>
-	
-	</children>
-</ActorFrame>
+<ActorFrame><children>
+	<BitmapText
+		Text="edit menu"
+		File="_nunito Bold"
+		InitCommand="xy,8,12;shadowlength,0;zoom,0.6;horizalign,left"
+	/>
+
+</children></ActorFrame>
