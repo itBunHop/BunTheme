@@ -8,7 +8,7 @@
 		Type="BitmapText"
 		Font="_nunito Bold small"
 		Text=""
-		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-104;zoom,0.5;shadowlength,0"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-100;zoom,0.5;shadowlength,0"
 		OnCommand="queuecommand,Set"
 		SetCommand="%function(self)
 			local life = SCREENMAN('LifeDifficulty'):GetText()
