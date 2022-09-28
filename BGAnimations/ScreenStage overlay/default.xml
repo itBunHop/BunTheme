@@ -11,6 +11,11 @@
 			OnCommand="diffusealpha,0;linear,0.25;diffusealpha,1;sleep,1;linear,0.25;diffusealpha,0"
 		/>
 		
+		<Actor
+			File="@'../../Graphics/ScreenGameplay stage '..GetStageText()"
+			OnCommand=""
+		/>
+		
 		<ActorFrame Condition="GAMESTATE:IsCourseMode()" ><children>
 		
 		</children></ActorFrame>

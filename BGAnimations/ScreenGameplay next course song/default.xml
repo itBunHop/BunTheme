@@ -6,4 +6,9 @@
 		StartCommand="stretchto,SCREEN_LEFT,SCREEN_TOP,SCREEN_RIGHT,SCREEN_BOTTOM;diffusealpha,0;sleep,0.3;linear,0.3;diffusealpha,1"
 		FinishCommand="sleep,0.3;linear,0.3;diffusealpha,0"
 	/>
+	
+	<Layer
+		Type="Quad"
+		InitCommand="zoomto,100,100;xy,SCREEN_CENTER_X,SCREEN_CENTER_Y"
+	/>
 </children> </ActorFrame>
