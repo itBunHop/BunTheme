@@ -1,12 +1,15 @@
 <ActorFrame
 	Sound="Screen cancel/cancel.ogg"
 > <children>
-	<Actor
+	<Layer
 		Type="Quad"
-		StartTransitioningCommand="%function(self) SCREENMAN:GetTopScreen():playcommand('Off') end"
+		InitCommand="stretchto,SCREEN_CENTER_X-320,0,SCREEN_CENTER_X+320,SCREEN_HEIGHT;diffuse,#000000;diffusealpha,0"
+		OffCommand="linear,0.5;diffusealpha,0.5"
 	/>
 	<Actor
-		File="_menu out"
+		Type="Quad"
+		InitCommand="hidden,1"
+		StartTransitioningCommand="%function(self) SCREENMAN:GetTopScreen():playcommand('Off') end"
 	/>
 </children> </ActorFrame>
 

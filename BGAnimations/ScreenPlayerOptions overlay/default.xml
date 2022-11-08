@@ -1,3 +1,19 @@
 <ActorFrame> <children>
-
+	<BitmapText
+		Font="_nunito Bold"
+		Condition="not GAMESTATE:IsEditMode()"
+		InitCommand="%function(self)
+			self:x(SCREEN_WIDTH*0.5)
+			self:y(SCREEN_CENTER_Y-180)
+			self:shadowlength(0)
+			self:zoom(0.5)
+			self:maxwidth((SCREEN_WIDTH-20)/0.5)
+			if GAMESTATE:IsCourseMode() then
+				self:hidden(1)
+			else
+				self:settext(GAMESTATE:GetCurrentSong():GetTranslitMainTitle()..'\n'..GAMESTATE:GetCurrentSong():GetTranslitArtist())
+			end
+		end"
+		OffCommand="linear,0.5;diffusealpha,0"
+	/>
 </children> </ActorFrame>

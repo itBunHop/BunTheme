@@ -3,22 +3,7 @@
 		Text="set up your mods"
 		File="_nunito Bold"
 		InitCommand="xy,8,12;shadowlength,0;zoom,0.6;horizalign,left"
-	/>
-	
-	<BitmapText
-		Font="_nunito Bold"
-		InitCommand="%function(self)
-			self:x(SCREEN_WIDTH*0.5)
-			self:y(SCREEN_CENTER_Y-180)
-			self:shadowlength(0)
-			self:zoom(0.5)
-			self:maxwidth((SCREEN_WIDTH-20)/0.5)
-			if GAMESTATE:IsCourseMode() then
-				self:hidden(1)
-			else
-				self:settext(GAMESTATE:GetCurrentSong():GetTranslitMainTitle()..'\n'..GAMESTATE:GetCurrentSong():GetTranslitArtist())
-			end
-		end"
+		OffCommand="linear,0.5;diffusealpha,0"
 	/>
 
 </children></ActorFrame>
