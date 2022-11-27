@@ -2,13 +2,13 @@
 	<children>
 		<Layer
 			File="bin"
-			InitCommand="stretchto,0,0,640,480;diffusealpha,0.5;x,SCREEN_WIDTH*0.5"
+			InitCommand="stretchto,0,0,640,480;diffusealpha,0.5;xy,SCREEN_CENTER_X,SCREEN_CENTER_Y"
 		
 		/>
 		<Layer 
-			File="big dot.png" 
+			File="big dot" 
 			InitCommand="diffuse,#FA9650"
-			OnCommand="stretchto,-1024,-1024,1024,1024;customtexturerect,0,0,32,32;texcoordvelocity,-.08,-.070;diffusealpha,0.2;x,SCREEN_CENTER_X"
+			OnCommand="stretchto,-1024,-1024,1024,1024;customtexturerect,0,0,32,32;texcoordvelocity,-.08,-.070;diffusealpha,0.2;xy,SCREEN_CENTER_X,SCREEN_CENTER_Y"
 		/>
 	</children>
 </ActorFrame>

@@ -1,7 +1,7 @@
 <ActorFrame> <children>
 	<Layer
 		Type="Quad"
-		InitCommand="stretchto,SCREEN_CENTER_X-426.666667,SCREEN_CENTER_Y+210,SCREEN_CENTER_X+426.666667,SCREEN_CENTER_Y+240;diffuse,#000000"
+		InitCommand="stretchto,SCREEN_CENTER_X-426.666667,SCREEN_HEIGHT-30,SCREEN_CENTER_X+426.666667,SCREEN_HEIGHT;diffuse,#000000"
 	/>
 	
 	<Layer
