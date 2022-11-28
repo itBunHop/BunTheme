@@ -3,7 +3,10 @@
 		
 		<FadingBanner 
 			OnCommand="%function(self)
-				self:LoadFromSong(GAMESTATE:GetCurrentSong()) self:diffusealpha(0) self:xy(70,64) self:queuecommand('Update') end" 
+				self:LoadFromSong(GAMESTATE:GetCurrentSong()) self:diffusealpha(1) self:xy(70,64) self:queuecommand('Update')
+				self:ScaleToClipped(418,164)
+				self:zoom(0.3)
+				end" 
 			UpdateCommand="%function(self)
 				if FUCK_EXE then
 					self:visible(PREFSMAN:GetPreference('EditorShowSongTitle') and 1 or 0)
@@ -58,21 +61,10 @@
 					self:cmd('diffuse,'..DifficultyColor(a:GetDifficulty()))
 				end
 				-- can i gsub info more and put it where info is
-			self:sleep(.1)
+			self:sleep(1/30)
 			self:queuecommand('Update')
 			end"
 			
-		/>
-		<Layer
-			OnCommand="queuecommand,Set"
-			SetCommand="%function(self)
-				local a = SCREENMAN(4)(1)(2)
-				-- because i dont know how to do it from the above and also fading banner problems
-				a:diffusealpha(1)
-				a:scaletoclipped(418,164)
-				a:zoom(0.3)
-			end"
-		
 		/>
 		
 		<Layer

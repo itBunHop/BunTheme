@@ -62,7 +62,7 @@
 				local actual = a:GetActualDancePoints()
 				
 				local score = actual/possible
-				if score < 0 then score = 0 end
+				if score <= 0 then score = 0 end
 				self:settext(FormatPercentScore(score))
 				-- because the percent text doesnt actually go well if it goes over 100 and you add more
 			end"
@@ -174,7 +174,8 @@
 				local actual = a:GetActualDancePoints()
 				
 				local score = actual/possible
-				if score < 0 then score = 0 end
+				if score <= 0 then score = 0 end
+				print(FormatPercentScore(score))
 				self:settext(FormatPercentScore(score))
 				-- because the percent text doesnt actually go well if it goes over 100 and you add more
 			end"
