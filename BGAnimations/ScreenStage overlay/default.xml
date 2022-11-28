@@ -16,9 +16,28 @@
 			OnCommand=""
 		/>
 		
-		<ActorFrame Condition="GAMESTATE:IsCourseMode()" ><children>
-		
-		</children></ActorFrame>
+		<Layer
+			Type="Quad"
+			InitCommand="hidden,1"
+			OnCommand="queuecommand,Update"
+			UpdateCommand="%function(self)
+				local config = stitch('config').HideProfilesGameplay
+				local overlay = SCREENMAN:GetOverlayScreens()
+				local screen
+				for i=1,#overlay do
+					screen = overlay[i]
+					if screen:GetName() == 'ScreenSystemLayer' then
+						if config then
+							for pn=1,2 do
+								screen('CreditsP'..pn):settext('')
+							end
+						end
+						break
+					end
+				end
+			
+			end"
+		/>
 		
 	</children>
 </ActorFrame>
