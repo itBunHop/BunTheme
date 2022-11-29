@@ -8,8 +8,7 @@
 		Type="BitmapText"
 		Font="_nunito Bold small"
 		Text=""
-		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-100;zoom,0.5;shadowlength,0"
-		OnCommand="queuecommand,Set"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-100;zoom,0.5;shadowlength,0;queuecommand,Set"
 		SetCommand="%function(self)
 			local life = SCREENMAN('LifeDifficulty'):GetText()
 			local lifenumber = math.floor(string.gsub(life,'life difficulty ',''))
@@ -27,8 +26,7 @@
 		Type="BitmapText"
 		Font="_nunito Bold small"
 		Text=""
-		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-80;zoom,0.5;shadowlength,0"
-		OnCommand="queuecommand,Set"
+		InitCommand="x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-80;zoom,0.5;shadowlength,0;queuecommand,Set"
 		SetCommand="%function(self)
 			local track = SCREENMAN('Songs'):GetText()
 			local vers = SCREENMAN('Version'):GetText()

@@ -27,7 +27,7 @@
 	/>
 	
 	<Layer
-		OnCommand="queuecommand,Set"
+		InitCommand="queuecommand,Set"
 		SetCommand="%function()
 			--[[ queued because need to wait until it exists
 			12 to 38

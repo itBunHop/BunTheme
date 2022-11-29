@@ -2,7 +2,7 @@
 	<children>
 		
 		<FadingBanner 
-			OnCommand="%function(self)
+			InitCommand="%function(self)
 				self:LoadFromSong(GAMESTATE:GetCurrentSong()) self:diffusealpha(1) self:xy(70,64) self:queuecommand('Update')
 				self:ScaleToClipped(418,164)
 				self:zoom(0.3)
@@ -48,8 +48,7 @@
 		<Layer
 			Type="BitmapText"
 			Font="_nunito Bold small"
-			InitCommand="xy,12,100;zoom,0.5;shadowlength,0;horizalign,left"
-			OnCommand="queuecommand,Update"
+			InitCommand="xy,12,100;zoom,0.5;shadowlength,0;horizalign,left;queuecommand,Update"
 			wakeupMessageCommand="queuecommand,Update"
 			UpdateCommand="%function(self)
 				local a = GAMESTATE:GetCurrentSteps(0)
@@ -73,9 +72,7 @@
 			InitCommand="xy,8,150;zoom,0.4;shadowlength,0;horizalign,left"
 			OnCommand="%function(self)
 			
-			local txt = 'use the esc menu once\n'..
-						'to hide player names\n'..
-						'[F1] help menu'
+			local txt = '[F1] help menu'
 			
 			self:settext(txt)
 			
@@ -85,8 +82,7 @@
 		
 		<Layer
 			Type="Quad"
-			InitCommand="hidden,1"
-			OnCommand="queuecommand,Update"
+			InitCommand="hidden,1;queuecommand,Update"
 			UpdateCommand="%function(self)
 				local overlay = SCREENMAN:GetOverlayScreens()
 				local screen

@@ -18,8 +18,7 @@
 		
 		<Layer
 			Type="Quad"
-			InitCommand="hidden,1"
-			OnCommand="queuecommand,Update"
+			InitCommand="hidden,1;queuecommand,Update"
 			UpdateCommand="%function(self)
 				local config = stitch('config').HideProfilesGameplay
 				local overlay = SCREENMAN:GetOverlayScreens()

@@ -36,8 +36,7 @@
 	<Layer
 		Type="BitmapText"
 		Font="_geo"
-		InitCommand="x,SCREEN_WIDTH*0.5;y,54;zoom,0.45;shadowlength,0"
-		OnCommand="queuecommand,Update"
+		InitCommand="x,SCREEN_WIDTH*0.5;y,54;zoom,0.45;shadowlength,0;queuecommand,Update"
 		UpdateCommand="%function(self)
 			self:settext(ThemeHelpers.round2(GAMESTATE:GetCurBPM(),3))
 			self:sleep(1/30)

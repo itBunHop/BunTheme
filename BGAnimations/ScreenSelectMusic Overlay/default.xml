@@ -29,7 +29,7 @@
 		
 		<!-- infos (i am queueing to move a topscreen child because it doesnt exist on oncommand) -->
 		<Layer
-			OnCommand="queuecommand,Move"
+			InitCommand="hidden,1;queuecommand,Move"
 			MoveCommand="%function()
 				local a = SCREENMAN:GetTopScreen():GetChild('ArtistDisplay')
 				

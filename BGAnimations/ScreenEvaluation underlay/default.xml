@@ -29,8 +29,7 @@
 			<Layer Type="BitmapText" 
 				Font="_nunito Bold small" 
 				Text="" 		
-				InitCommand="horizalign,right;shadowlength,0;zoom,0.6;xy,170,20*6"
-				OnCommand="queuecommand,Set"
+				InitCommand="horizalign,right;shadowlength,0;zoom,0.6;xy,170,20*6;queuecommand,Set"
 				SetCommand="%function(self) 
 					local a = SCREENMAN:GetTopScreen():GetChild('HoldsTextP1'):GetText()
 					
@@ -40,8 +39,7 @@
 			<Layer Type="BitmapText" 
 				Font="_nunito Bold small" 
 				Text="" 		
-				InitCommand="horizalign,right;shadowlength,0;zoom,0.6;xy,170,20*8"
-				OnCommand="queuecommand,Set"
+				InitCommand="horizalign,right;shadowlength,0;zoom,0.6;xy,170,20*8;queuecommand,Set"
 				SetCommand="%function(self) 
 					local a = SCREENMAN:GetTopScreen():GetChild('RollsTextP1'):GetText()
 					
@@ -54,8 +52,7 @@
 		<Layer
 			Type="BitmapText"
 			Font="_geo"
-			InitCommand="shadowlength,0;x,280;y,72;zoom,0.5;horizalign,right"
-			OnCommand="queuecommand,Set"
+			InitCommand="shadowlength,0;x,280;y,72;zoom,0.5;horizalign,right;queuecommand,Set"
 			SetCommand="%function(self)
 				local a = STATSMAN:GetCurStageStats():GetPlayerStageStats(0)
 				local possible = a:GetPossibleDancePoints()
@@ -72,8 +69,7 @@
 		<Layer
 			Type="BitmapText"
 			Font="_nunito small"
-			InitCommand="shadowlength,0;x,8;y,270;zoom,0.45;horizalign,left;wrapwidthpixels,650"
-			OnCommand="queuecommand,Set"
+			InitCommand="shadowlength,0;x,8;y,270;zoom,0.45;horizalign,left;wrapwidthpixels,650;queuecommand,Set"
 			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP1'):GetText()) end"
 		/>
 		
@@ -141,8 +137,7 @@
 			<Layer Type="BitmapText" 
 				Font="_nunito Bold small" 
 				Text="" 		
-				InitCommand="horizalign,right;shadowlength,0;zoom,0.6;xy,170,20*6"
-				OnCommand="queuecommand,Set"
+				InitCommand="horizalign,right;shadowlength,0;zoom,0.6;xy,170,20*6;queuecommand,Set"
 				SetCommand="%function(self) 
 					local a = SCREENMAN:GetTopScreen():GetChild('HoldsTextP2'):GetText()
 					
@@ -152,8 +147,7 @@
 			<Layer Type="BitmapText" 
 				Font="_nunito Bold small" 
 				Text="" 		
-				InitCommand="horizalign,right;shadowlength,0;zoom,0.6;xy,170,20*8"
-				OnCommand="queuecommand,Set"
+				InitCommand="horizalign,right;shadowlength,0;zoom,0.6;xy,170,20*8;queuecommand,Set"
 				SetCommand="%function(self) 
 					local a = SCREENMAN:GetTopScreen():GetChild('RollsTextP2'):GetText()
 					
@@ -166,8 +160,7 @@
 		<Layer
 			Type="BitmapText"
 			Font="_geo"
-			InitCommand="shadowlength,0;x,280;y,72;zoom,0.5;horizalign,right"
-			OnCommand="queuecommand,Set"
+			InitCommand="shadowlength,0;x,280;y,72;zoom,0.5;horizalign,right;queuecommand,Set"
 			SetCommand="%function(self)
 				local a = STATSMAN:GetCurStageStats():GetPlayerStageStats(1)
 				local possible = a:GetPossibleDancePoints()
@@ -175,7 +168,6 @@
 				
 				local score = actual/possible
 				if score <= 0 then score = 0 end
-				print(FormatPercentScore(score))
 				self:settext(FormatPercentScore(score))
 				-- because the percent text doesnt actually go well if it goes over 100 and you add more
 			end"
@@ -187,8 +179,7 @@
 		<Layer
 			Type="BitmapText"
 			Font="_nunito small"
-			InitCommand="shadowlength,0;x,8;y,270;zoom,0.45;horizalign,left;wrapwidthpixels,650"
-			OnCommand="queuecommand,Set"
+			InitCommand="shadowlength,0;x,8;y,270;zoom,0.45;horizalign,left;wrapwidthpixels,650;queuecommand,Set"
 			SetCommand="%function(self) self:settext(SCREENMAN:GetTopScreen():GetChild('PlayerOptionsP2'):GetText()) end"
 		/>
 		
