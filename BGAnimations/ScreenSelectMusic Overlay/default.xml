@@ -26,7 +26,7 @@
 			MoveCommand="%function()
 				local a = SCREENMAN:GetTopScreen():GetChild('ArtistDisplay')
 				
-				a:x(math.max(SCREEN_WIDTH*0.25-1,SCREEN_CENTER_X-219.333333))
+				a:x(math.max(SCREEN_WIDTH*0.25,SCREEN_CENTER_X-219.333333))
 				a:y(SCREEN_CENTER_Y-68)
 				a:zoom(0.45)
 				a:horizalign('center')
@@ -60,11 +60,10 @@
 		Font="_nunito Bold"
 		Text="Song Name"
 		InitCommand="%function(self)
-			self:x(math.max(SCREEN_WIDTH*0.25-1,SCREEN_CENTER_X-219.333333))
+			self:x(math.max(SCREEN_WIDTH*0.25,SCREEN_CENTER_X-219.333333))
 			self:y(SCREEN_CENTER_Y-86)
 			self:zoom(0.5)
-			self:glow(1,1,1,0.4)
-			self:maxwidth(ThemeHelpers.Clamped_WideScale(306/0.45,(306/0.45)*1.333333))
+			self:maxwidth(ThemeHelpers.Clamped_WideScale(306/0.5,(306/0.5)*1.333333))
 			self:shadowlength(0)
 			self:hidden(0)
 		end"
@@ -110,10 +109,115 @@
 		CurrentSongChangedMessageCommand="playcommand,Set"
 	/>
 	
-	<!-- labels for players (it is here because overlay is above the panedisplay, which i use and it makes me sad) -->
-	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" InitCommand="%function(self) self:x(math.max(0,SCREEN_CENTER_X-426.666667)) self:y(SCREEN_CENTER_Y+67+10) self:diffuse(0,0,0,200/255) end" />
-	<Layer File="labels.xml" Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)" InitCommand="%function(self) self:x(math.max(0,SCREEN_CENTER_X-426.666667)) self:y(SCREEN_CENTER_Y+67+10+69) self:diffuse(0,0,0,200/255) end" />
+	<!-- pane display for real (gamer) -->
+	<Layer File="pane.xml" InitCommand="%function(self) self:xy(math.max(SCREEN_WIDTH*0.25,SCREEN_CENTER_X-214.333333),SCREEN_CENTER_Y+160) end" />
 	
+	<!-- machine score lol -->
+		
+	<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(0)"
+		InitCommand="hidden,1;sleep,1/9e9;queuecommand,Move"
+		MoveCommand="%function()
+			local a = SCREENMAN('PaneDisplayP1')
+			local info = SCREENMAN('PaneDisplayP1')(2)
+			a:hidden(0)
+			a(1):hidden(1)
+			for i=1,info:GetNumChildren() do
+				info(i):hidden(1)
+			end
+			
+			local songmachinepb = info('MachineHighScoreText')
+			local songmachinepbtext = info('MachineHighNameText')
+			local songprofilepb = info('ProfileHighScoreText')
+			
+			local coursemachinepb = info('CourseMachineHighScoreText')
+			local coursemachinetext = info('CourseMachineHighNameText')
+			local courseprofilepb = info('CourseProfileHighScoreText')
+			
+			--
+			if GAMESTATE:IsCourseMode() then
+				courseprofilepb:hidden(0)
+				courseprofilepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-106,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122)
+				courseprofilepb:horizalign('center') courseprofilepb:vertalign('center') courseprofilepb:shadowlength(0) courseprofilepb:zoom(0.65)
+				
+				coursemachinepb:hidden(0)
+				coursemachinepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-106,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48)
+				coursemachinepb:horizalign('center') coursemachinepb:vertalign('center') coursemachinepb:shadowlength(0) coursemachinepb:zoom(0.65)
+				
+				
+				coursemachinetext:hidden(0)
+				coursemachinetext:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-106,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48+15)
+				coursemachinetext:horizalign('center') coursemachinetext:vertalign('center') coursemachinetext:shadowlength(0) coursemachinetext:zoom(0.5)
+			else
+				songprofilepb:hidden(0)
+				songprofilepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-106,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122)
+				songprofilepb:horizalign('center') songprofilepb:vertalign('center') songprofilepb:shadowlength(0) songprofilepb:zoom(0.65)
+				
+				songmachinepb:hidden(0)
+				songmachinepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-106,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48)
+				songmachinepb:horizalign('center') songmachinepb:vertalign('center') songmachinepb:shadowlength(0) songmachinepb:zoom(0.65)
+				
+				
+				songmachinepbtext:hidden(0)
+				songmachinepbtext:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-106,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48+15)
+				songmachinepbtext:horizalign('center') songmachinepbtext:vertalign('center') songmachinepbtext:shadowlength(0) songmachinepbtext:zoom(0.5)
+			end
+			
+		end"
+	/>
+	
+	<Layer
+		Condition="GAMESTATE:IsPlayerEnabled(1)"
+		InitCommand="hidden,1;sleep,1/9e9;queuecommand,Move"
+		MoveCommand="%function()
+			local a = SCREENMAN('PaneDisplayP2')
+			local info = SCREENMAN('PaneDisplayP2')(2)
+			a:hidden(0)
+			a(1):hidden(1)
+			for i=1,info:GetNumChildren() do
+				info(i):hidden(1)
+			end
+			
+			local songmachinepb = info('MachineHighScoreText')
+			local songmachinepbtext = info('MachineHighNameText')
+			local songprofilepb = info('ProfileHighScoreText')
+			
+			local coursemachinepb = info('CourseMachineHighScoreText')
+			local coursemachinetext = info('CourseMachineHighNameText')
+			local courseprofilepb = info('CourseProfileHighScoreText')
+			
+			--
+			if GAMESTATE:IsCourseMode() then
+				courseprofilepb:hidden(0)
+				courseprofilepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+106,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122)
+				courseprofilepb:horizalign('center') courseprofilepb:vertalign('center') courseprofilepb:shadowlength(0) courseprofilepb:zoom(0.65)
+				
+				coursemachinepb:hidden(0)
+				coursemachinepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+106,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48)
+				coursemachinepb:horizalign('center') coursemachinepb:vertalign('center') coursemachinepb:shadowlength(0) coursemachinepb:zoom(0.65)
+				
+				
+				coursemachinetext:hidden(0)
+				coursemachinetext:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+106,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48+15)
+				coursemachinetext:horizalign('center') coursemachinetext:vertalign('center') coursemachinetext:shadowlength(0) coursemachinetext:zoom(0.5)
+			else
+				songprofilepb:hidden(0)
+				songprofilepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+106,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122)
+				songprofilepb:horizalign('center') songprofilepb:vertalign('center') songprofilepb:shadowlength(0) songprofilepb:zoom(0.65)
+				
+				songmachinepb:hidden(0)
+				songmachinepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+106,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48)
+				songmachinepb:horizalign('center') songmachinepb:vertalign('center') songmachinepb:shadowlength(0) songmachinepb:zoom(0.65)
+				
+				
+				songmachinepbtext:hidden(0)
+				songmachinepbtext:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+106,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48+15)
+				songmachinepbtext:horizalign('center') songmachinepbtext:vertalign('center') songmachinepbtext:shadowlength(0) songmachinepbtext:zoom(0.5)
+			end
+			
+		end"
+	/>
+		
 	<!-- quad overlay -->
 	<Layer
 		Type="Quad"

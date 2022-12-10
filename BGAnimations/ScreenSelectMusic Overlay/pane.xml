@@ -1,0 +1,69 @@
+<ActorFrame
+		CurrentSongChangedMessageCommand="playcommand,Set" 
+		CurrentStepsP1ChangedMessageCommand="playcommand,Set" 
+		CurrentTrailP1ChangedMessageCommand="playcommand,Set"
+		CurrentStepsP2ChangedMessageCommand="playcommand,Set" 
+		CurrentTrailP2ChangedMessageCommand="playcommand,Set"
+		><children>
+		
+		<!-- steps -->
+		<Layer
+			Type="BitmapText"
+			Font="_nunito Bold small"
+			Text="Steps::Holds::Rolls::Mines::Jumps::Hands"
+			InitCommand="zoom,0.55;shadowlength,0"
+		/>
+		
+		<Layer
+			Type="BitmapText"
+			Font="_nunito Bold small"
+			Condition="GAMESTATE:IsPlayerEnabled(0)"
+			InitCommand="zoom,0.55;x,-30;shadowlength,0;horizalign,right"
+			OnCommand="%function(self)
+				self:cmd('diffuse,'..PlayerColor(0))
+				self:queuecommand('Set')
+			end"
+			SetCommand="%function(self)
+				local a = GAMESTATE:GetCurrentTrail(0) or GAMESTATE:GetCurrentSteps(0)
+				if a then
+					local text = a:GetRadarValues():GetValue(5)..'\n'..
+								a:GetRadarValues():GetValue(7)..'\n'..
+								a:GetRadarValues():GetValue(10)..'\n'..
+								a:GetRadarValues():GetValue(8)..'\n'..
+								a:GetRadarValues():GetValue(6)..'\n'..
+								a:GetRadarValues():GetValue(9)
+					text = string.gsub(text,'-1','?')
+					self:settext(text)
+				else
+					self:settext('')
+				end
+			end"
+		/>
+		
+		<Layer
+			Type="BitmapText"
+			Font="_nunito Bold small"
+			Condition="GAMESTATE:IsPlayerEnabled(1)"
+			InitCommand="zoom,0.55;x,30;shadowlength,0;horizalign,left"
+			OnCommand="%function(self)
+				self:cmd('diffuse,'..PlayerColor(1))
+				self:queuecommand('Set')
+			end"
+			SetCommand="%function(self)
+				local a = GAMESTATE:GetCurrentTrail(1) or GAMESTATE:GetCurrentSteps(1)
+				if a then
+					local text = a:GetRadarValues():GetValue(5)..'\n'..
+								a:GetRadarValues():GetValue(7)..'\n'..
+								a:GetRadarValues():GetValue(10)..'\n'..
+								a:GetRadarValues():GetValue(8)..'\n'..
+								a:GetRadarValues():GetValue(6)..'\n'..
+								a:GetRadarValues():GetValue(9)
+					text = string.gsub(text,'-1','?')
+					self:settext(text)
+				else
+					self:settext('')
+				end
+			end"
+		/>
+		
+</children></ActorFrame>

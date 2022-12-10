@@ -24,7 +24,7 @@
 			Font="_nunito"
 			Text="???"
 			InitCommand="x,4;zoom,0.375;shadowlength,0;horizalign,left" 
-			OnCommand="%function(self) self:maxwidth(ThemeHelpers.Clamped_WideScale(730,750*1.333333)) end"
+			OnCommand="%function(self) self:maxwidth(ThemeHelpers.Clamped_WideScale(770,780*1.333333)) end"
 			SetCommand="%function(self)
 				if not GAMESTATE:IsCourseMode() then
 					local steps = GAMESTATE:GetCurrentSteps(PLAYER_1)
@@ -57,7 +57,7 @@
 	<Layer
 		Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-		InitCommand="y,SCREEN_CENTER_Y+67+69"
+		InitCommand="y,SCREEN_CENTER_Y+67+15"
 		OnCommand="%function(self) self:x(math.max(20,SCREEN_CENTER_X-406.666667)) end"
 	><children>
 		<Layer 
@@ -70,7 +70,7 @@
 			Font="_nunito"
 			Text="???" 
 			InitCommand="x,4;zoom,0.375;shadowlength,0;horizalign,left"
-			OnCommand="%function(self) self:maxwidth(ThemeHelpers.Clamped_WideScale(730,750*1.333333)) end"
+			OnCommand="%function(self) self:maxwidth(ThemeHelpers.Clamped_WideScale(770,780*1.333333)) end"
 			SetCommand="%function(self)
 				if not GAMESTATE:IsCourseMode() then
 					local steps = GAMESTATE:GetCurrentSteps(PLAYER_2)
