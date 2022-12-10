@@ -8,13 +8,6 @@
 		<Layer
 			Type="BitmapText"
 			Font="_nunito Bold"
-			Text="Artist:"
-			InitCommand="shadowlength,0;zoom,0.45;diffuse,#BBBBBB;horizalign,right"
-		/>
-		
-		<Layer
-			Type="BitmapText"
-			Font="_nunito Bold"
 			Text="BPM:"
 			InitCommand="y,18;shadowlength,0;zoom,0.45;diffuse,#BBBBBB;horizalign,right"
 		/>
@@ -33,11 +26,11 @@
 			MoveCommand="%function()
 				local a = SCREENMAN:GetTopScreen():GetChild('ArtistDisplay')
 				
-				a:x(math.max(50+4,SCREEN_CENTER_X-426.666667+50+4))
-				a:y(SCREEN_CENTER_Y-70)
+				a:x(math.max(SCREEN_WIDTH*0.25-1,SCREEN_CENTER_X-219.333333))
+				a:y(SCREEN_CENTER_Y-68)
 				a:zoom(0.45)
-				a:horizalign('left')
-				a:maxwidth(ThemeHelpers.Clamped_WideScale(550,580*1.333333))
+				a:horizalign('center')
+				a:maxwidth(ThemeHelpers.Clamped_WideScale(306/0.45,(306/0.45)*1.333333))
 				a:shadowlength(0)
 				a:hidden(0)
 				
@@ -62,14 +55,40 @@
 			end"
 		/>
 	</children></Layer>
+	<Layer
+		Type="BitmapText"
+		Font="_nunito Bold"
+		Text="Song Name"
+		InitCommand="%function(self)
+			self:x(math.max(SCREEN_WIDTH*0.25-1,SCREEN_CENTER_X-219.333333))
+			self:y(SCREEN_CENTER_Y-86)
+			self:zoom(0.5)
+			self:glow(1,1,1,0.4)
+			self:maxwidth(ThemeHelpers.Clamped_WideScale(306/0.45,(306/0.45)*1.333333))
+			self:shadowlength(0)
+			self:hidden(0)
+		end"
+		SetCommand="%function(self)
+			-- course mode works too early
+			local a = GAMESTATE:GetCurrentSong()
+			if a then
+				-- idk
+				self:settext(a:GetDisplayMainTitle())
+			else
+				self:settext('')
+			end
+		end"
+		CurrentSongChangedMessageCommand="playcommand,Set"
+	/>
+	
 	
 	<!-- group info -->
 	<Layer
 		Type="BitmapText"
 		Font="_nunito Bold"
 		Text="group name"
-		InitCommand="xy,SCREEN_CENTER_X-160-6,SCREEN_CENTER_Y-226;shadowlength,0;zoom,0.55;diffuse,#FFFFFF;maxwidth,545"
-		OnCommand="%function(self) self:x(math.max(SCREEN_WIDTH*0.25-6,SCREEN_CENTER_X-213.33333325-6)) self:maxwidth(ThemeHelpers.Clamped_WideScale(545,545*1.333333)) end"
+		InitCommand="y,SCREEN_CENTER_Y-226;shadowlength,0;zoom,0.55;diffuse,#FFFFFF;maxwidth,545"
+		OnCommand="%function(self) self:x(math.max(SCREEN_WIDTH*0.25,SCREEN_CENTER_X-213.33333325-6)) self:maxwidth(ThemeHelpers.Clamped_WideScale(545,545*1.333333)) end"
 		SetCommand="%function(self)
 		local gcs = GAMESTATE:GetCurrentSong()
 		if gcs then
