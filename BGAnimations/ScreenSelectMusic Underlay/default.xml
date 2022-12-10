@@ -57,7 +57,7 @@
 	<Layer
 		Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
-		InitCommand="y,SCREEN_CENTER_Y+67+15"
+		InitCommand="y,SCREEN_CENTER_Y+67+14"
 		OnCommand="%function(self) self:x(math.max(20,SCREEN_CENTER_X-406.666667)) end"
 	><children>
 		<Layer 

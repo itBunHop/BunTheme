@@ -21,6 +21,7 @@
 			InitCommand="zoom,0.55;x,-30;shadowlength,0;horizalign,right"
 			OnCommand="%function(self)
 				self:cmd('diffuse,'..PlayerColor(0))
+				self:x(ThemeHelpers.Clamped_WideScale(-30,-40))
 				self:queuecommand('Set')
 			end"
 			SetCommand="%function(self)
@@ -47,6 +48,7 @@
 			InitCommand="zoom,0.55;x,30;shadowlength,0;horizalign,left"
 			OnCommand="%function(self)
 				self:cmd('diffuse,'..PlayerColor(1))
+				self:x(ThemeHelpers.Clamped_WideScale(30,40))
 				self:queuecommand('Set')
 			end"
 			SetCommand="%function(self)
