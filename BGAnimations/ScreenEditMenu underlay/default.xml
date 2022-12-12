@@ -15,9 +15,15 @@
 			local smeter = SCREENMAN('EditMenu')('SourceMeter')('Meter')
 			title:zoomx(0.5)
 			title:maxwidth(330/0.5)
+			title:x(-162)
+			
 			subtitle:zoomx(0.4)
 			subtitle:maxwidth(330/0.4)
-			artist:hidden(0) artist:shadowlength(0) artist:xy(-164,24) artist:horizalign('left')
+			subtitle:x(-162)
+			
+			artist:hidden(0) artist:shadowlength(0) 
+			artist:xy(-162,24) 
+			artist:horizalign('left')
 			artist:zoom(0.45)
 			artist:maxwidth(330/0.45)
 			

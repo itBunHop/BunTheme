@@ -1,6 +1,6 @@
 <ActorFrame>
 	<children>
-		
+
 		<FadingBanner 
 			InitCommand="%function(self)
 				self:LoadFromSong(GAMESTATE:GetCurrentSong()) self:diffusealpha(1) self:xy(70,64) self:queuecommand('Update')
@@ -60,7 +60,7 @@
 					self:cmd('diffuse,'..DifficultyColor(a:GetDifficulty()))
 				end
 				-- can i gsub info more and put it where info is
-			self:sleep(1/30)
+			self:sleep(1/20)
 			self:queuecommand('Update')
 			end"
 			

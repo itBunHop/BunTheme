@@ -11,7 +11,7 @@
 			if GAMESTATE:IsCourseMode() then
 				self:hidden(1)
 			else
-				self:settext(GAMESTATE:GetCurrentSong():GetTranslitMainTitle()..'\n'..GAMESTATE:GetCurrentSong():GetTranslitArtist())
+				self:settext(GAMESTATE:GetCurrentSong():GetDisplayMainTitle()..'\n'..GAMESTATE:GetCurrentSong():GetDisplayArtist())
 			end
 		end"
 		OffCommand="linear,0.5;diffusealpha,0"
