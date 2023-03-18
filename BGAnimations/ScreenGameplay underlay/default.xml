@@ -9,7 +9,7 @@
 		/>
 		<Layer
 			Type="SongMeterDisplay"
-			StreamWidth="298"
+			StreamWidth="300"
 			StreamPath="meter stream"
 			InitCommand="zoomy,20;diffuse,#00FFFF88"
 			OnCommand="%function(self) self:zoomx(ThemeHelpers.WideScale(1,1.333333)) end"
@@ -28,24 +28,68 @@
 			CurrentSongChangedMessageCommand="playcommand,Update"
 			UpdateCommand="%SetFromSongTitleAndCourseTitle"
 		/>
-		<!-- its 296 - 396 because image stretching is not great -->.
-		<Layer File="meter frame" InitCommand="%function(self) self:zoomx(ThemeHelpers.WideScale(1,1.333333)) end"/>
+		<!-- image stretching is not great -->
+		<Layer
+			Type="Quad"
+			InitCommand="stretchto,-150,0,150,2;diffuse,#FFFFFF;y,-9"
+			OnCommand="%function(self) self:zoomx(ThemeHelpers.WideScale(300,400)) end"
+		/>
+		
+		<Layer
+			Type="Quad"
+			InitCommand="stretchto,-150,0,150,2;diffuse,#FFFFFF;y,9"
+			OnCommand="%function(self) self:zoomx(ThemeHelpers.WideScale(300,400)) end"
+		/>
+		
+		<Layer
+			Type="Quad"
+			InitCommand="stretchto,0,0,2,20;diffuse,#FFFFFF"
+			OnCommand="%function(self) self:xy(ThemeHelpers.WideScale(-150,-200),0) end"
+		/>
+		
+		<Layer
+			Type="Quad"
+			InitCommand="stretchto,0,0,2,20;diffuse,#FFFFFF"
+			OnCommand="%function(self) self:xy(ThemeHelpers.WideScale(150,200),0) end"
+		/>
+		
 	</children> </Layer>
 	
 	<!-- bpm is awes but not bpmdisplay (that one is not cool) -->
+	<!-- rates currently only apply in .1 increments although you can apply anything so -->
+	<Layer
+		Type="BitmapText"
+		Font="_nunito bold small"
+		InitCommand="x,SCREEN_WIDTH*0.5;y,38;zoom,0.5;shadowlength,0;hidden,1"
+		OnCommand="%function(self)
+			local rate = ThemeHelpers.round2(GAMESTATE:GetMusicRate()+0.001,1)
+			if rate ~= 1 then self:hidden(0) end
+			self:settext(rate..'x')
+		
+		end"
+	
+	/>
+	
 	<Layer
 		Type="BitmapText"
 		Font="_geo"
 		InitCommand="x,SCREEN_WIDTH*0.5;y,54;zoom,0.45;shadowlength,0;queuecommand,Update"
+		OnCommand="%function(self)
+			local rate = GAMESTATE:GetMusicRate()
+			if rate ~= 1 then self:addy(4) end
+			if rate < 1 then self:cmd('diffuse,'..JudgmentColorLight(1)) end
+			if rate > 1 then self:cmd('diffuse,'..JudgmentColorLight(6)) end
+		
+		end"
 		UpdateCommand="%function(self)
-			self:settext(ThemeHelpers.round2(GAMESTATE:GetCurBPM(),3))
-			self:sleep(1/30)
+			self:settext(ThemeHelpers.round2(GAMESTATE:GetCurBPM()*ThemeHelpers.round2(GAMESTATE:GetMusicRate()+0.001,1),3))
+			self:sleep(1/15)
 			self:queuecommand('Update')
 		
 		end"
 	/>
 	
-	<!-- Difficulty (soon) -->
+	<!-- Difficulty -->
 	<Layer Type="ActorFrame" OnCommand="hidden,0" > <children>
 		<ActorFrame Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)" OnCommand="xy,SCREEN_CENTER_X-((SCREEN_WIDTH*0.25)+150),37" CurrentStepsP1ChangedMessageCommand="playcommand,Update"><children>
 			<Actor
@@ -85,7 +129,9 @@
 			if FUCK_EXE then
 				stitch('lua.death').Start()
 			end
-		end" 
+			
+			self:queuecommand('Update')
+		end"
 	/>
 </children> </ActorFrame>
 

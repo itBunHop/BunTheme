@@ -7,7 +7,7 @@
 	<Layer
 		InitCommand="hidden,1;queuecommand,Update"
 		UpdateCommand="%function()
-			print(SCREENMAN('Question'):GetText())
+			--print(SCREENMAN('Question'):GetText())
 		end"
 	/>
 

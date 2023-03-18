@@ -1,6 +1,6 @@
 <ActorFrame><children>
 	<BitampText
-		Text="i am alone::and would like 4 arrows"
+		Text="i do not want to play modfiles"
 		File="common normal"
 		InitCommand="zoom,0.7;maxwidth,600/0.7"
 		GainFocusCommand="hidden,0;finishtweening;cropright,1;linear,0.5;cropright,0"
