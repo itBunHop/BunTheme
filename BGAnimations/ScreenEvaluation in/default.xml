@@ -2,8 +2,8 @@
 	<children>
 		<Layer
 			Type="Quad"
-			InitCommand="hidden,1"
-			OnCommand="sleep,1"
+			InitCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,#000000"
+			OnCommand="decelerate,1;diffusealpha,0"
 		/>
 	</children>
 </ActorFrame>

@@ -3,8 +3,8 @@
 > <children>
 	<Layer
 		Type="Quad"
-		InitCommand="stretchto,SCREEN_CENTER_X-320,0,SCREEN_CENTER_X+320,SCREEN_HEIGHT;diffuse,#000000;diffusealpha,0"
-		OffCommand="linear,0.5;diffusealpha,0.5"
+		InitCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,#000000;diffusealpha,0"
+		OffCommand="linear,0.5;diffusealpha,1"
 	/>
 	<Actor
 		Type="Quad"

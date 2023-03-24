@@ -77,8 +77,8 @@
 		OnCommand="%function(self)
 			local rate = GAMESTATE:GetMusicRate()
 			if rate ~= 1 then self:addy(4) end
-			if rate < 1 then self:cmd('diffuse,'..JudgmentColorLight(1)) end
-			if rate > 1 then self:cmd('diffuse,'..JudgmentColorLight(6)) end
+			if rate < 1 then self:diffuse(150/255,220/255,250/255,1) end
+			if rate > 1 then self:diffuse(255/255,120/255,120/255,1) end
 		
 		end"
 		UpdateCommand="%function(self)

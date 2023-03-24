@@ -2,7 +2,7 @@
 	<!-- backdrop here -->
 	<Layer
 		Type="Quad"
-		InitCommand="stretchto,SCREEN_CENTER_X-320,0,SCREEN_CENTER_X+320,SCREEN_HEIGHT;diffuse,#000000;diffusealpha,0.5"
+		InitCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,#000000;diffusealpha,0.4"
 	/>
 	
 	<!-- p1 things -->
@@ -12,7 +12,7 @@
 		Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_1)"
 		InitCommand="y,SCREEN_CENTER_Y+67"
-		OnCommand="%function(self) self:x(math.max(20,SCREEN_CENTER_X-406.666667)) end"
+		OnCommand="%function(self) self:x(math.max(20,SCREEN_CENTER_X-406.666667)) if GAMESTATE:IsCourseMode() then self:addy(12) end end"
 	><children>
 		<Layer 
 			Type="BitmapText"
@@ -58,7 +58,7 @@
 		Type="ActorFrame"
 		Condition="GAMESTATE:IsPlayerEnabled(PLAYER_2)"
 		InitCommand="y,SCREEN_CENTER_Y+67+14"
-		OnCommand="%function(self) self:x(math.max(20,SCREEN_CENTER_X-406.666667)) end"
+		OnCommand="%function(self) self:x(math.max(20,SCREEN_CENTER_X-406.666667)) if GAMESTATE:IsCourseMode() then self:addy(12) end end"
 	><children>
 		<Layer 
 			Type="BitmapText"
@@ -126,6 +126,7 @@
 	<Layer
 		Type="Quad"
 		InitCommand="stretchto,SCREEN_CENTER_X-426.666667,SCREEN_CENTER_Y-2,SCREEN_CENTER_X-2,SCREEN_CENTER_Y+2;y,SCREEN_CENTER_Y+56;diffuse,#FFFFFF"
+		OnCommand="%function(self) if GAMESTATE:IsCourseMode() then self:y(SCREEN_CENTER_Y+68.5) end end"
 	/>
 </children> </ActorFrame>
 

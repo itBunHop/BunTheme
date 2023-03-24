@@ -10,7 +10,8 @@ my friends have told me to get it working functionally and work on visuals later
 - more fonts
 - reformatting of various screens to use less of metrics.ini (hopefully, theming is kind of not good)
     - ScreenEvaluationStage
-    - ScreenSelectMusic (i might need metrics here though)
+    - ScreenSelectMusic
+	- ScreenEdit
 - some visuals are currently from Simply Love, will hope to figure out what to do with replacing
 - minimal combo explosions and no event text
 

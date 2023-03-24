@@ -137,29 +137,29 @@
 			--
 			if GAMESTATE:IsCourseMode() then
 				courseprofilepb:hidden(0)
-				courseprofilepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+15)
+				courseprofilepb:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+15)
 				courseprofilepb:horizalign('center') courseprofilepb:vertalign('middle') courseprofilepb:shadowlength(0) courseprofilepb:zoom(0.65)
 				
 				coursemachinepb:hidden(0)
-				coursemachinepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48+15)
+				coursemachinepb:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48+15)
 				coursemachinepb:horizalign('center') coursemachinepb:vertalign('middle') coursemachinepb:shadowlength(0) coursemachinepb:zoom(0.65)
 				
 				
 				coursemachinetext:hidden(0)
-				coursemachinetext:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48)
+				coursemachinetext:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48)
 				coursemachinetext:horizalign('center') coursemachinetext:vertalign('middle') coursemachinetext:shadowlength(0) coursemachinetext:zoom(0.5)
 			else
 				songprofilepb:hidden(0)
-				songprofilepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+15)
+				songprofilepb:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+15)
 				songprofilepb:horizalign('center') songprofilepb:vertalign('middle') songprofilepb:shadowlength(0) songprofilepb:zoom(0.65)
 				
 				songmachinepb:hidden(0)
-				songmachinepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48+15)
+				songmachinepb:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48+15)
 				songmachinepb:horizalign('center') songmachinepb:vertalign('middle') songmachinepb:shadowlength(0) songmachinepb:zoom(0.65)
 				
 				
 				songmachinepbtext:hidden(0)
-				songmachinepbtext:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48)
+				songmachinepbtext:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25-110,SCREEN_WIDTH*0.25-130),SCREEN_CENTER_Y+122+48)
 				songmachinepbtext:horizalign('center') songmachinepbtext:vertalign('middle') songmachinepbtext:shadowlength(0) songmachinepbtext:zoom(0.5)
 			end
 			
@@ -189,34 +189,61 @@
 			--
 			if GAMESTATE:IsCourseMode() then
 				courseprofilepb:hidden(0)
-				courseprofilepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+15)
+				courseprofilepb:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+15)
 				courseprofilepb:horizalign('center') courseprofilepb:vertalign('middle') courseprofilepb:shadowlength(0) courseprofilepb:zoom(0.65)
 				
 				coursemachinepb:hidden(0)
-				coursemachinepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48+15)
+				coursemachinepb:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48+15)
 				coursemachinepb:horizalign('center') coursemachinepb:vertalign('middle') coursemachinepb:shadowlength(0) coursemachinepb:zoom(0.65)
 				
 				
 				coursemachinetext:hidden(0)
-				coursemachinetext:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48)
+				coursemachinetext:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48)
 				coursemachinetext:horizalign('center') coursemachinetext:vertalign('middle') coursemachinetext:shadowlength(0) coursemachinetext:zoom(0.5)
 			else
 				songprofilepb:hidden(0)
-				songprofilepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+15)
+				songprofilepb:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+15)
 				songprofilepb:horizalign('center') songprofilepb:vertalign('middle') songprofilepb:shadowlength(0) songprofilepb:zoom(0.65)
 				
 				songmachinepb:hidden(0)
-				songmachinepb:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48+15)
+				songmachinepb:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48+15)
 				songmachinepb:horizalign('center') songmachinepb:vertalign('middle') songmachinepb:shadowlength(0) songmachinepb:zoom(0.65)
 				
 				
 				songmachinepbtext:hidden(0)
-				songmachinepbtext:xy(ThemeHelpers.Clamped_WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48)
+				songmachinepbtext:xy(ThemeHelpers.WideScale(SCREEN_WIDTH*0.25+110,SCREEN_WIDTH*0.25+130),SCREEN_CENTER_Y+122+48)
 				songmachinepbtext:horizalign('center') songmachinepbtext:vertalign('middle') songmachinepbtext:shadowlength(0) songmachinepbtext:zoom(0.5)
 			end
 			
 		end"
 	/>
+	
+	<!-- course mode song count -->
+	<Layer
+		Condition="GAMESTATE:IsCourseMode()"
+		InitCommand="hidden,1"
+		OnCommand="queuecommand,Move"
+		MoveCommand="%function()
+			local a = SCREENMAN('NumSongs')
+			a:hidden(0)
+			a:shadowlength(0)
+			a:zoom(0.6)
+			a:horizalign('right')
+			a:xy(182,330)
+			a:addx(ThemeHelpers.Clamped_WideScale(0,40))
+		
+		end"
+	/>
+	
+	<Layer
+		Condition="GAMESTATE:IsCourseMode()"
+		Type="BitmapText"
+		Font="_nunito Bold"
+		Text="songs"
+		InitCommand="x,190;y,338;shadowlength,0;zoom,0.45;horizalign,left"
+		OnCommand="%function(self) self:addx(ThemeHelpers.Clamped_WideScale(0,40)) end"
+	/>
+	
 	
 	<!-- quad overlay -->
 	<Layer

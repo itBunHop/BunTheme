@@ -1,0 +1,12 @@
+<ActorFrame> <children>
+	<Layer
+		InitCommand="hidden,1"
+		OnCommand="queuecommand,Set"
+		SetCommand="%function(self)
+			local a = SCREENMAN('Inputs')
+			a:vertalign('top')
+			a:y(200)
+		end"
+	/>
+</children> </ActorFrame>
+
