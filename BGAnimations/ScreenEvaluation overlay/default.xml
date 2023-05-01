@@ -7,12 +7,35 @@
 		InitCommand="diffuse,#000000;diffusealpha,0.75;stretchto,SCREEN_CENTER_X-310,SCREEN_CENTER_Y-124,SCREEN_CENTER_X+310,SCREEN_CENTER_Y-88;fadeleft,0.2;faderight,0.2"
 	/>
 	
+	<!-- music rate -->
+	<Layer
+		Type="Quad"
+		Condition="GAMESTATE:GetMusicRate() ~= 1"
+		InitCommand="diffuse,#000000;diffusealpha,0.75;stretchto,SCREEN_CENTER_X-136,SCREEN_CENTER_Y-140,SCREEN_CENTER_X+136,SCREEN_CENTER_Y-128"
+	/>
+	
+	<Layer
+		Type="BitmapText"
+		Font="_nunito bold small"
+		Text="art"
+		Condition="GAMESTATE:GetMusicRate() ~= 1"
+		InitCommand="hidden,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-134;shadowlength,0;zoom,0.45;maxwidth,1200;queuecommand,Set"
+		SetCommand="%function(self)
+		local rate = ThemeHelpers.round2(GAMESTATE:GetMusicRate()+0.001,1)
+		
+		if rate < 1 then self:diffuse(150/255,220/255,250/255,1) else self:diffuse(255/255,120/255,120/255,1) end
+		
+		self:settext(rate..'x Music Rate')
+		self:hidden(0)
+		end"
+	/>
+	
 	
 	<Layer
 		Type="BitmapText"
 		Font="_nunito Bold small"
 		Text="song"
-		InitCommand="hidden,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-113;shadowlength,0;zoom,0.75;maxwidth,800;queuecommand,Set"
+		InitCommand="hidden,1;x,SCREEN_CENTER_X;y,SCREEN_CENTER_Y-113;shadowlength,0;zoom,0.7;maxwidth,800;queuecommand,Set"
 		SetCommand="%function(self)
 		local coursemode = GAMESTATE:IsCourseMode()
 		local native = PREFSMAN:GetPreference('ShowNativeLanguage')

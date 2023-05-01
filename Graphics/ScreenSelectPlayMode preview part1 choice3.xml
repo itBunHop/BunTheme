@@ -1,6 +1,6 @@
 <ActorFrame><children>
 	<BitampText
-		Text="i would like to play more than one file in a row"
+		Text="play more than one file in a row"
 		File="common normal"
 		InitCommand="zoom,0.7;maxwidth,600/0.7"
 		GainFocusCommand="hidden,0;finishtweening;cropright,1;linear,0.5;cropright,0"

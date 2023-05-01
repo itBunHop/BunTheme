@@ -1,6 +1,6 @@
 <ActorFrame><children>
 	<BitampText
-		Text="i would like to play more one than file in a row::while outrunning a clock with accuracy"
+		Text="play more one than file in a row::while outrunning a clock with accuracy"
 		File="common normal"
 		InitCommand="zoom,0.7;maxwidth,600/0.7"
 		GainFocusCommand="hidden,0;finishtweening;cropright,1;linear,0.5;cropright,0"

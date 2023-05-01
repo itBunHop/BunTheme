@@ -1,6 +1,6 @@
 function PlayerColor( pn )
-	if pn == PLAYER_1 then return "#7896FF" end	-- blue
-	if pn == PLAYER_2 then return "#FF7896" end	-- pink that is kind of red
+	if pn == PLAYER_1 then return "#82B4FF" end	-- blue
+	if pn == PLAYER_2 then return "#FF82A0" end	-- pink that is kind of red
 	return "1,1,1,1"
 end
 

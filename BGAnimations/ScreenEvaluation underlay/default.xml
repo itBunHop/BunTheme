@@ -190,7 +190,7 @@
 			InitCommand="shadowlength,0;x,4;y,-14;zoom,0.6;horizalign,left;maxwidth,500;queuecommand,Set"
 			SetCommand="%function(self)
 				if not GAMESTATE:IsCourseMode() then
-					local a = GAMESTATE:GetCurrentSteps(0)
+					local a = GAMESTATE:GetCurrentSteps(1)
 					local b = a:GetRadarValues()
 					self:settext(DifficultyToThemedString(a:GetDifficulty())..' '..a:GetMeter())
 				else

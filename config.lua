@@ -58,15 +58,13 @@ wraps:
     Word wrapped newlines won't affect code, it's purely visual
 ]]
 
--- BunTheme
+-- BunTheme --
 
 HideProfilesGameplay = true
 
 --[[
-HideProfilesGameplay
+HideProfilesGameplay: 
 	hide CreditsP1 and CreditsP2 during ScreenStage and ScreenGameplay
-	(will be hidden in the editor without needing the esc menu)
-	
-	i did it on a queued command so i can write less unhiddening the things
-	so it might flash for a frame
+	will be hidden in the editor without needing the esc menu, unless you have a profile on, lol
+	i did it on a queued command so i can write less unhiddening the things, so it might flash for a frame
 ]]

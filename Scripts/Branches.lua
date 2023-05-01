@@ -7,7 +7,8 @@ end
 function EvaluationNextScreen()
 
 	if GAMESTATE:IsEventMode() then return SongSelectionScreen() end
-	if AllFailed() or IsFinalStage() then return "ScreenNameEntryTraditional" end
+	if AllFailed() or IsFinalStage() then return SelectEndingScreen() end
+	-- i hope i dont get destroyed
 	return SongSelectionScreen();
 end
 
