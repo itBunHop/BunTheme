@@ -244,6 +244,34 @@
 		OnCommand="%function(self) self:addx(ThemeHelpers.Clamped_WideScale(0,40)) end"
 	/>
 	
+	<!-- cd title keeps hiding for some reason (which i stole from sm5) its not in use i am sad-->
+	<Layer
+		Condition="false"
+		OnCommand="hidden,1;queuecommand,Set"
+		SetCommand="%function(self)
+			if SCREENMAN('CDTitle') then 
+				local a = SCREENMAN('CDTitle')
+				
+				a:x(1000000)
+				local dim1=math.max(a:GetWidth(), a:GetHeight())
+				local dim2=math.min(a:GetWidth(), a:GetHeight())
+                local ratio=math.max(dim1/dim2, 2.5)
+				local toScale = a:GetWidth() > a:GetHeight() and a:GetWidth() or a:GetHeight()
+                a:zoom(24/toScale * ratio)
+				
+				if (dim1 <= 8) or (dim2 <= 8) then a:hidden(1) else a:hidden(0) end
+				a:xy(SCREEN_CENTER_X-6,SCREEN_CENTER_Y-206)
+				
+			end
+			
+			-- this suffers from course mode from which 'CurrentSongChangedMessageCommand' is too early
+			self:sleep(1/1000)
+			self:queuecommand('Set')
+			
+			
+			-- there is actually two
+		end"
+	/>
 	
 	<!-- quad overlay -->
 	<Layer
