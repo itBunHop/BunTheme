@@ -1,6 +1,6 @@
 <ActorFrame><children>
 	<BitampText
-		Text="i might have a friend::and we get 4 arrows each"
+		Text="two players (or yourself twice) has four arrows::enjoy"
 		File="common normal"
 		InitCommand="zoom,0.7;maxwidth,600/0.7"
 		GainFocusCommand="hidden,0;finishtweening;cropright,1;linear,0.5;cropright,0"

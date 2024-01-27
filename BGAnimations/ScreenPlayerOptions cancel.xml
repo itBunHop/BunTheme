@@ -1,10 +1,9 @@
 <ActorFrame
-	Sound="Screen cancel/cancel.ogg"
 > <children>
 	<Layer
 		Type="Quad"
 		InitCommand="stretchto,0,0,SCREEN_WIDTH,SCREEN_HEIGHT;diffuse,#000000;diffusealpha,0"
-		OffCommand="linear,0.5;diffusealpha,1"
+		OffCommand="accelerate,0.2;diffusealpha,1"
 	/>
 	<Actor
 		Type="Quad"

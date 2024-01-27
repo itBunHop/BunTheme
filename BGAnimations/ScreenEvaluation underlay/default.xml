@@ -6,7 +6,7 @@
 		/>
 		
 		<!-- label -->
-		<Layer Type="ActorFrame" UpdateSpellDisplayP1MessageCommand="%function(self) local pn = 1 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" InitCommand="x,100;y,32"><children>
+		<Layer Type="ActorFrame" UpdateSpellDisplayP1MessageCommand="%function(self) local pn = 1 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" InitCommand="x,90;y,32" Name="LabelsP1"><children>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Fantastic" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;xy,0,20*2" OnCommand="@'diffuse,'..JudgmentColorLight(1)"/>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Excellent" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;xy,0,20*3" OnCommand="@'diffuse,'..JudgmentColorLight(2)"/>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Great" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;xy,0,20*4" OnCommand="@'diffuse,'..JudgmentColorLight(3)"/>
@@ -18,7 +18,7 @@
 			<Layer Type="BitmapText" Font="common normal" Text="Rolls" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.6;xy,180,20*8-16" />
 		</children></Layer>
 		<!-- real stats -->
-		<Layer Type="ActorFrame" InitCommand="x,110;y,32" UpdateSpellDisplayP1MessageCommand="%function(self) local pn = 1 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" Name="StatsP1"><children>
+		<Layer Type="ActorFrame" InitCommand="x,100;y,32" UpdateSpellDisplayP1MessageCommand="%function(self) local pn = 1 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" Name="StatsP1"><children>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;xy,0,20*2" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(1)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(8)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;xy,0,20*3" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(2)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(7)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;xy,0,20*4" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(3)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(0):GetTapNoteScores(6)) end" />
@@ -59,7 +59,7 @@
 				local actual = a:GetActualDancePoints()
 				
 				local score = actual/possible
-				if score <= 0 then score = 0 end
+				if (score <= 0) or (possible == 0) then score = 0 end
 				self:settext(FormatPercentScore(score))
 				-- because the percent text doesnt actually go well if it goes over 100 and you add more
 			end"
@@ -113,7 +113,7 @@
 		/>
 		
 		<!-- label -->
-		<Layer Type="ActorFrame" UpdateSpellDisplayP2MessageCommand="%function(self) local pn = 2 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" InitCommand="x,100;y,32"><children>
+		<Layer Type="ActorFrame" UpdateSpellDisplayP2MessageCommand="%function(self) local pn = 2 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" InitCommand="x,90;y,32" Name="LabelsP2"><children>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Fantastic" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;xy,0,20*2" OnCommand="@'diffuse,'..JudgmentColorLight(1)"/>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Excellent" InitCommand="horizalign,right;shadowlength,0;zoom,0.7;xy,0,20*3" OnCommand="@'diffuse,'..JudgmentColorLight(2)"/>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="Great" 	InitCommand="horizalign,right;shadowlength,0;zoom,0.7;xy,0,20*4" OnCommand="@'diffuse,'..JudgmentColorLight(3)"/>
@@ -125,7 +125,7 @@
 			<Layer Type="BitmapText" Font="common normal" Text="Rolls" 			InitCommand="horizalign,right;shadowlength,0;zoom,0.6;xy,180,20*8-16" />
 		</children></Layer>
 		<!-- real stats -->
-		<Layer Type="ActorFrame" InitCommand="x,110;y,32" UpdateSpellDisplayP2MessageCommand="%function(self) local pn = 2 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" Name="StatsP2"><children>
+		<Layer Type="ActorFrame" InitCommand="x,100;y,32" UpdateSpellDisplayP2MessageCommand="%function(self) local pn = 2 if oplot_hidden[pn] == 1 then self:hidden(0) else self:hidden(1) end end" Name="StatsP2"><children>
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;xy,0,20*2" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(1)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(8)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;xy,0,20*3" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(2)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(7)) end" />
 			<Layer Type="BitmapText" Font="_nunito Bold small" Text="0" 		InitCommand="horizalign,left;shadowlength,0;zoom,0.7;xy,0,20*4" OnCommand="%function(self) self:cmd('diffuse,'..JudgmentColorLight(3)) self:settext(STATSMAN:GetCurStageStats():GetPlayerStageStats(1):GetTapNoteScores(6)) end" />
@@ -167,7 +167,7 @@
 				local actual = a:GetActualDancePoints()
 				
 				local score = actual/possible
-				if score <= 0 then score = 0 end
+				if (score <= 0) or (possible == 0) then score = 0 end
 				self:settext(FormatPercentScore(score))
 				-- because the percent text doesnt actually go well if it goes over 100 and you add more
 			end"
@@ -215,4 +215,31 @@
 			end"
 		/>
 	</children></Layer>
+	
+	<!-- dancepoint -->
+	<Layer Type="BitmapText" Text="" Font="_nunito Bold small"
+		OnCommand="%function(self)
+			local pn = 1
+			
+			self:xy(SCREEN_CENTER_X-160,194)
+			self:zoom(.4)
+			self:shadowlength(0)
+			self:horizalign(0.5)
+			self:diffuse(0.2,0.5,1,1)
+			self:settext('DP: '..STATSMAN:GetCurStageStats():GetPlayerStageStats(pn-1):GetActualDancePoints()..'/'..STATSMAN:GetCurStageStats():GetPlayerStageStats(pn-1):GetPossibleDancePoints()..'')
+		end"
+	/>
+	
+	<Layer Type="BitmapText" Text="" Font="_nunito Bold small"
+		OnCommand="%function(self)
+			local pn = 2
+			
+			self:xy(SCREEN_CENTER_X+160,194)
+			self:zoom(.4)
+			self:shadowlength(0)
+			self:horizalign(0.5)
+			self:diffuse(1,0.2,0.5,1)
+			self:settext('DP: '..STATSMAN:GetCurStageStats():GetPlayerStageStats(pn-1):GetActualDancePoints()..'/'..STATSMAN:GetCurStageStats():GetPlayerStageStats(pn-1):GetPossibleDancePoints()..'')
+		end"
+	/>
 </children><ActorFrame>
