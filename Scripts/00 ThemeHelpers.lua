@@ -12,7 +12,7 @@ end
 
 -- i stole it from itg simply love :cries:
 ThemeHelpers.JudgmentTween = function(self) self:zoom(0.8) self:decelerate(.1) self:zoom(0.75) self:sleep(.6) self:accelerate(.2) self:zoom(0) end
-ThemeHelpers.HoldTween = function(self) self:diffuse(1,1,1,1) self:zoom(.5); self:sleep(.5) self:diffusealpha(0) end
+ThemeHelpers.HoldTween = function(self) self:diffuse(1,1,1,1) self:zoom(.50) self:sleep(.5) self:diffusealpha(0) end
 ThemeHelpers.DeltaTimeTween = function(self) self:stoptweening() self:stopeffect() self:diffusealpha(1) self:zoom(1.5) self:decelerate(0.25) self:zoom(1) self:sleep(1) self:diffusealpha(0) end
 
 -- thank you sm5 simply love (and also the fallback theme) --

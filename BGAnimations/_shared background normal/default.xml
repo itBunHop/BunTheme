@@ -7,7 +7,7 @@
 		/>
 		<Layer 
 			File="big dot" 
-			InitCommand="diffuse,#FA9650"
+			InitCommand="diffuse,#FF5555"
 			OnCommand="stretchto,-1024,-1024,1024,1024;customtexturerect,0,0,32,32;texcoordvelocity,-.08,-.070;diffusealpha,0.2;xy,SCREEN_CENTER_X,SCREEN_CENTER_Y"
 		/>
 	</children>
