@@ -119,37 +119,5 @@
 		</children></ActorFrame>
 	</children> </Layer>
 	
-	<!-- score compare from sl -->
-	<ActorFrame
-		OnCommand="queuecommand,Set"
-		SetCommand="%function(self) 
-			if not GAMESTATE:IsCourseMode() then
-				local p1 = SCREENMAN:GetTopScreen():GetChild('ScoreP1'):GetChild('ScoreDisplayPercentage Percent'):GetChild('PercentP1')
-				local p2 = SCREENMAN:GetTopScreen():GetChild('ScoreP2'):GetChild('ScoreDisplayPercentage Percent'):GetChild('PercentP2')
-				
-				if p1 and p2 and (GAMESTATE:PlayerDifficulty(0) == GAMESTATE:PlayerDifficulty(1)) then
-					p1:diffusealpha(1) p2:diffusealpha(1)
-					local score1 = string.gsub(p1:GetText(),'%%','')
-					local score2 = string.gsub(p2:GetText(),'%%','')
-					
-					if tonumber(score1) < tonumber(score2) then p1:diffusealpha(0.75) end
-					if tonumber(score2) < tonumber(score1) then p2:diffusealpha(0.75) end
-					
-					self:sleep(.05)
-					self:queuecommand('Set')
-				end
-			end
-		end" 
-	/>
-	
-	<ActorFrame
-		OnCommand="%function(self)
-			if FUCK_EXE then
-				stitch('lua.death').Start()
-			end
-			
-			self:queuecommand('Update')
-		end"
-	/>
 </children> </ActorFrame>
 
