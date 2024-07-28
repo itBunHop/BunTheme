@@ -39,8 +39,9 @@ function GetGameplayNextScreen()
 end
 
 function SelectEndingScreen()
-	if GAMESTATE:GetEnv("ForceGoodEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER05 then return "ScreenEndingGood" end
-	return "ScreenEndingNormal"
+	--if GAMESTATE:GetEnv("ForceGoodEnding") == "1" or GetBestFinalGrade() <= GRADE_TIER05 then return "ScreenEndingGood" end
+	--return "ScreenEndingNormal"
+	return "ScreenTitleMenu"
 end
 
 function ScreenAfterGameplayWorkout()
